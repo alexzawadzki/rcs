@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Renata's Cleaning Service - Professional residential and commercial cleaning services with attention to detail. Serving the community for over 10 years.">
+    <title>Renata's Cleaning Service | Pure Elegance in Every Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #C41E3A;
+            --deep-red: #8B1A2F;
+            --soft-red: #E85D75;
+            --cream: #F8F5F0;
+            --magnolia-white: #FFFEF9;
+            --soft-green: #8BA888;
+            --charcoal: #2C2C2C;
+            --warm-gray: #6B6B6B;
+            --light-gray: #E8E8E8;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background: var(--magnolia-white);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--magnolia-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--primary-red);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary-red);
+            outline: 2px solid var(--primary-red);
+            outline-offset: 4px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--deep-red) 100%);
+            color: var(--magnolia-white);
+            padding: 140px 2rem 100px;
+            margin-top: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+        }
+
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.1rem 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            outline: 3px solid var(--magnolia-white);
+            outline-offset: 2px;
+        }
+
+        .btn-primary {
+            background: var(--soft-green);
+            color: var(--magnolia-white);
+        }
+
+        .btn-secondary {
+            background: var(--magnolia-white);
+            color: var(--primary-red);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 2rem;
+            background: var(--cream);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 400;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--warm-gray);
+            margin-bottom: 4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--magnolia-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover,
+        .service-card:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--warm-gray);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 100px 2rem;
+            background: var(--magnolia-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--magnolia-white) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.1);
+        }
+
+        .feature h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .feature p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--warm-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 2rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--magnolia-white) 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: var(--magnolia-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            border: 1px solid var(--light-gray);
+        }
+
+        .testimonial-stars {
+            color: #FFD700;
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-text {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--warm-gray);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 2rem;
+            background: var(--magnolia-white);
+        }
+
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 12px;
+            min-width: 280px;
+            flex: 1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .contact-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-red);
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-item a {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover,
+        .contact-item a:focus {
+            color: var(--primary-red);
+            text-decoration: underline;
+            outline: 2px solid var(--primary-red);
+            outline-offset: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.9);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: underline;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            color: var(--soft-red);
+            outline: 2px solid rgba(255,255,255,0.9);
+            outline-offset: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .nav-links {
+                gap: 1.25rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .logo {
+                font-size: 1.35rem;
+            }
+
+            .logo svg {
+                width: 40px;
+                height: 40px;
+                margin-right: 8px;
+            }
+
+            .hero svg {
+                width: 90px !important;
+                height: 90px !important;
+            }
+        }
+
+        /* Accessibility: Focus visible for keyboard navigation */
+        *:focus {
+            outline: 2px solid var(--primary-red);
+            outline-offset: 2px;
+        }
+
+        /* Skip to main content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-red);
+            color: var(--magnolia-white);
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 12px;">
+                    <defs>
+                        <radialGradient id="petal" cx="50%" cy="30%">
+                            <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                            <stop offset="60%" style="stop-color:#FFF8F0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F5E6D3;stop-opacity:1" />
+                        </radialGradient>
+                        <radialGradient id="center" cx="40%" cy="40%">
+                            <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#FFE4A0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FFDB8A;stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <!-- Main petals -->
+                    <path d="M 100 35 Q 85 40 82 60 Q 80 75 85 85 Q 90 90 100 88 Q 110 90 115 85 Q 120 75 118 60 Q 115 40 100 35 Z" fill="url(#petal)" stroke="rgba(196,30,58,0.3)" stroke-width="0.8" opacity="0.85"/>
+                    <path d="M 165 100 Q 160 85 140 82 Q 125 80 115 85 Q 110 90 112 100 Q 110 110 115 115 Q 125 120 140 118 Q 160 115 165 100 Z" fill="url(#petal)" stroke="rgba(196,30,58,0.3)" stroke-width="0.8" opacity="0.85"/>
+                    <path d="M 100 165 Q 115 160 118 140 Q 120 125 115 115 Q 110 110 100 112 Q 90 110 85 115 Q 80 125 82 140 Q 85 160 100 165 Z" fill="url(#petal)" stroke="rgba(196,30,58,0.3)" stroke-width="0.8" opacity="0.85"/>
+                    <path d="M 35 100 Q 40 115 60 118 Q 75 120 85 115 Q 90 110 88 100 Q 90 90 85 85 Q 75 80 60 82 Q 40 85 35 100 Z" fill="url(#petal)" stroke="rgba(196,30,58,0.3)" stroke-width="0.8" opacity="0.85"/>
+                    <!-- Diagonal petals -->
+                    <path d="M 138 62 Q 130 55 120 58 Q 112 62 110 72 Q 112 82 120 88 Q 128 90 136 86 Q 142 80 138 62 Z" fill="url(#petal)" stroke="rgba(196,30,58,0.3)" stroke-width="0.8" opacity="0.8"/>
+                    <path d="M 138 138 Q 142 120 136 114 Q 128 110 120 112 Q 112 118 110 128 Q 112 138 120 142 Q 130 145 138 138 Z" fill="url(#petal)" stroke="rgba(196,30,58,0.3)" stroke-width="0.8" opacity="0.8"/>
+                    <path d="M 62 138 Q 55 130 58 120 Q 62 112 72 110 Q 82 112 88 120 Q 90 128 86 136 Q 80 142 62 138 Z" fill="url(#petal)" stroke="rgba(196,30,58,0.3)" stroke-width="0.8" opacity="0.8"/>
+                    <path d="M 62 62 Q 80 58 86 64 Q 90 72 88 80 Q 82 88 72 90 Q 62 88 58 80 Q 55 70 62 62 Z" fill="url(#petal)" stroke="rgba(196,30,58,0.3)" stroke-width="0.8" opacity="0.8"/>
+                    <!-- Inner petals -->
+                    <path d="M 100 50 Q 92 52 88 62 Q 86 72 90 80 Q 94 85 100 84 Q 106 85 110 80 Q 114 72 112 62 Q 108 52 100 50 Z" fill="white" stroke="rgba(196,30,58,0.2)" stroke-width="0.6"/>
+                    <path d="M 150 100 Q 148 92 138 88 Q 128 86 120 90 Q 115 94 116 100 Q 115 106 120 110 Q 128 114 138 112 Q 148 108 150 100 Z" fill="white" stroke="rgba(196,30,58,0.2)" stroke-width="0.6"/>
+                    <path d="M 100 150 Q 108 148 112 138 Q 114 128 110 120 Q 106 115 100 116 Q 94 115 90 120 Q 86 128 88 138 Q 92 148 100 150 Z" fill="white" stroke="rgba(196,30,58,0.2)" stroke-width="0.6"/>
+                    <path d="M 50 100 Q 52 108 62 112 Q 72 114 80 110 Q 85 106 84 100 Q 85 94 80 90 Q 72 86 62 88 Q 52 92 50 100 Z" fill="white" stroke="rgba(196,30,58,0.2)" stroke-width="0.6"/>
+                    <!-- Center -->
+                    <circle cx="100" cy="100" r="12" fill="url(#center)" stroke="#FFDB8A" stroke-width="0.5"/>
+                    <circle cx="100" cy="95" r="1.5" fill="white" opacity="0.8"/>
+                    <circle cx="105" cy="98" r="1.5" fill="white" opacity="0.8"/>
+                    <circle cx="103" cy="103" r="1.5" fill="white" opacity="0.8"/>
+                    <circle cx="97" cy="103" r="1.5" fill="white" opacity="0.8"/>
+                    <circle cx="95" cy="98" r="1.5" fill="white" opacity="0.8"/>
+                </svg>
+                <span>Renata's Cleaning Service</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <svg width="120" height="120" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 30px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));">
+                    <defs>
+                        <radialGradient id="hero-petal" cx="50%" cy="30%">
+                            <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                            <stop offset="60%" style="stop-color:#FFF8F0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F5E6D3;stop-opacity:1" />
+                        </radialGradient>
+                        <radialGradient id="hero-center" cx="40%" cy="40%">
+                            <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#FFE4A0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FFDB8A;stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <!-- Main petals -->
+                    <path d="M 100 35 Q 85 40 82 60 Q 80 75 85 85 Q 90 90 100 88 Q 110 90 115 85 Q 120 75 118 60 Q 115 40 100 35 Z" fill="url(#hero-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.85"/>
+                    <path d="M 165 100 Q 160 85 140 82 Q 125 80 115 85 Q 110 90 112 100 Q 110 110 115 115 Q 125 120 140 118 Q 160 115 165 100 Z" fill="url(#hero-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.85"/>
+                    <path d="M 100 165 Q 115 160 118 140 Q 120 125 115 115 Q 110 110 100 112 Q 90 110 85 115 Q 80 125 82 140 Q 85 160 100 165 Z" fill="url(#hero-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.85"/>
+                    <path d="M 35 100 Q 40 115 60 118 Q 75 120 85 115 Q 90 110 88 100 Q 90 90 85 85 Q 75 80 60 82 Q 40 85 35 100 Z" fill="url(#hero-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.85"/>
+                    <!-- Diagonal petals -->
+                    <path d="M 138 62 Q 130 55 120 58 Q 112 62 110 72 Q 112 82 120 88 Q 128 90 136 86 Q 142 80 138 62 Z" fill="url(#hero-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.8"/>
+                    <path d="M 138 138 Q 142 120 136 114 Q 128 110 120 112 Q 112 118 110 128 Q 112 138 120 142 Q 130 145 138 138 Z" fill="url(#hero-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.8"/>
+                    <path d="M 62 138 Q 55 130 58 120 Q 62 112 72 110 Q 82 112 88 120 Q 90 128 86 136 Q 80 142 62 138 Z" fill="url(#hero-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.8"/>
+                    <path d="M 62 62 Q 80 58 86 64 Q 90 72 88 80 Q 82 88 72 90 Q 62 88 58 80 Q 55 70 62 62 Z" fill="url(#hero-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.8"/>
+                    <!-- Inner petals -->
+                    <path d="M 100 50 Q 92 52 88 62 Q 86 72 90 80 Q 94 85 100 84 Q 106 85 110 80 Q 114 72 112 62 Q 108 52 100 50 Z" fill="white" stroke="rgba(255,255,255,0.6)" stroke-width="0.6"/>
+                    <path d="M 150 100 Q 148 92 138 88 Q 128 86 120 90 Q 115 94 116 100 Q 115 106 120 110 Q 128 114 138 112 Q 148 108 150 100 Z" fill="white" stroke="rgba(255,255,255,0.6)" stroke-width="0.6"/>
+                    <path d="M 100 150 Q 108 148 112 138 Q 114 128 110 120 Q 106 115 100 116 Q 94 115 90 120 Q 86 128 88 138 Q 92 148 100 150 Z" fill="white" stroke="rgba(255,255,255,0.6)" stroke-width="0.6"/>
+                    <path d="M 50 100 Q 52 108 62 112 Q 72 114 80 110 Q 85 106 84 100 Q 85 94 80 90 Q 72 86 62 88 Q 52 92 50 100 Z" fill="white" stroke="rgba(255,255,255,0.6)" stroke-width="0.6"/>
+                    <!-- Center -->
+                    <circle cx="100" cy="100" r="12" fill="url(#hero-center)" stroke="#FFDB8A" stroke-width="0.5"/>
+                    <circle cx="100" cy="95" r="1.5" fill="white"/>
+                    <circle cx="105" cy="98" r="1.5" fill="white"/>
+                    <circle cx="103" cy="103" r="1.5" fill="white"/>
+                    <circle cx="97" cy="103" r="1.5" fill="white"/>
+                    <circle cx="95" cy="98" r="1.5" fill="white"/>
+                </svg>
+                <h1>Pure Elegance in Every Detail</h1>
+                <p>Professional residential and commercial cleaning services with meticulous attention to detail</p>
+                <div class="rating" role="img" aria-label="Rated 4.6 out of 5 stars based on 11 reviews">
+                    <span class="stars">★★★★★</span>
+                    <span>4.6 (11 Reviews)</span>
+                </div>
+                <div class="cta-buttons">
+                    <a href="tel:8607965222" class="btn btn-primary">Call (860) 796-5222</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Cleaning Services</h2>
+                <p class="section-subtitle">Comprehensive cleaning solutions for homes and businesses</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon" role="img" aria-label="House icon">🏠</div>
+                        <h3>Residential Cleaning</h3>
+                        <p>Expert home cleaning services including vacuuming, dusting, and organizing. We move objects to clean surfaces thoroughly, not just dust around them—ensuring every corner shines.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" role="img" aria-label="Building icon">🏢</div>
+                        <h3>Commercial Cleaning</h3>
+                        <p>Professional office and business cleaning services. We maintain your commercial spaces with the same meticulous attention to detail that has earned our reputation over 10+ years.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" role="img" aria-label="Apartment icon">🏘️</div>
+                        <h3>Condo & Apartment Cleaning</h3>
+                        <p>Specialized cleaning for condos and apartments with flexible monthly or custom schedules. Our team puts things back in an organized way after thorough cleaning.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" role="img" aria-label="Sparkle icon">✨</div>
+                        <h3>Deep Cleaning Services</h3>
+                        <p>Comprehensive deep cleaning that reaches every corner of your space. Perfect for seasonal cleaning, move-ins, or when your space needs that extra touch of perfection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose" class="why-choose">
+            <div class="container">
+                <h2 class="section-title">Why Choose Renata's?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon" role="img" aria-label="Award icon">🏆</div>
+                        <h3>Over 10 Years Experience</h3>
+                        <p>More than a decade of providing exceptional cleaning services to satisfied residential and commercial clients</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon" role="img" aria-label="Checkmark icon">✓</div>
+                        <h3>Meticulous Attention to Detail</h3>
+                        <p>We take pride in complete, thorough cleaning—moving objects to properly dust surfaces, not cutting corners</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon" role="img" aria-label="Clock icon">⏰</div>
+                        <h3>Reliable & Punctual</h3>
+                        <p>We arrive on time and consistently deliver high-quality results. Flexible scheduling to accommodate your needs</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon" role="img" aria-label="Shield icon">🛡️</div>
+                        <h3>Professional Standards</h3>
+                        <p>Respectful service with proper safety protocols to protect your home or business space</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Real reviews from satisfied customers</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" role="img" aria-label="5 star rating">★★★★★</div>
+                        <p class="testimonial-text">"Renata and her team are the best! They move objects to dust surfaces, they're not dusting around them! They put things back in an organized way. I really appreciate their attention to detail and complete cleaning. They arrive on time and are responsive to my requests."</p>
+                        <p class="testimonial-author">— Donald McMenemy</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" role="img" aria-label="5 star rating">★★★★★</div>
+                        <p class="testimonial-text">"I have been using Renata's Cleaning Service for about 10 years. Both she and her girls do an incredible job for me and I wouldn't use anyone else."</p>
+                        <p class="testimonial-author">— Karin Hunt</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" role="img" aria-label="5 star rating">★★★★★</div>
+                        <p class="testimonial-text">"We are very satisfied with Renata's cleaning. Her work is consistently good. She has been with us for several years and is very reliable and flexible to work around scheduling changes. I highly recommend her service."</p>
+                        <p class="testimonial-author">— Mark DeBisschop</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Ready to experience exceptional cleaning service? Contact us today!</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>📞 Call Us</h3>
+                            <a href="tel:8607965222">(860) 796-5222</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <svg width="60" height="60" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 20px; opacity: 0.9;">
+                <defs>
+                    <radialGradient id="footer-petal" cx="50%" cy="30%">
+                        <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                        <stop offset="60%" style="stop-color:#FFF8F0;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#F5E6D3;stop-opacity:1" />
+                    </radialGradient>
+                    <radialGradient id="footer-center" cx="40%" cy="40%">
+                        <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#FFE4A0;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FFDB8A;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                <!-- Main petals -->
+                <path d="M 100 35 Q 85 40 82 60 Q 80 75 85 85 Q 90 90 100 88 Q 110 90 115 85 Q 120 75 118 60 Q 115 40 100 35 Z" fill="url(#footer-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.85"/>
+                <path d="M 165 100 Q 160 85 140 82 Q 125 80 115 85 Q 110 90 112 100 Q 110 110 115 115 Q 125 120 140 118 Q 160 115 165 100 Z" fill="url(#footer-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.85"/>
+                <path d="M 100 165 Q 115 160 118 140 Q 120 125 115 115 Q 110 110 100 112 Q 90 110 85 115 Q 80 125 82 140 Q 85 160 100 165 Z" fill="url(#footer-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.85"/>
+                <path d="M 35 100 Q 40 115 60 118 Q 75 120 85 115 Q 90 110 88 100 Q 90 90 85 85 Q 75 80 60 82 Q 40 85 35 100 Z" fill="url(#footer-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.85"/>
+                <!-- Diagonal petals -->
+                <path d="M 138 62 Q 130 55 120 58 Q 112 62 110 72 Q 112 82 120 88 Q 128 90 136 86 Q 142 80 138 62 Z" fill="url(#footer-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.8"/>
+                <path d="M 138 138 Q 142 120 136 114 Q 128 110 120 112 Q 112 118 110 128 Q 112 138 120 142 Q 130 145 138 138 Z" fill="url(#footer-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.8"/>
+                <path d="M 62 138 Q 55 130 58 120 Q 62 112 72 110 Q 82 112 88 120 Q 90 128 86 136 Q 80 142 62 138 Z" fill="url(#footer-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.8"/>
+                <path d="M 62 62 Q 80 58 86 64 Q 90 72 88 80 Q 82 88 72 90 Q 62 88 58 80 Q 55 70 62 62 Z" fill="url(#footer-petal)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" opacity="0.8"/>
+                <!-- Inner petals -->
+                <path d="M 100 50 Q 92 52 88 62 Q 86 72 90 80 Q 94 85 100 84 Q 106 85 110 80 Q 114 72 112 62 Q 108 52 100 50 Z" fill="white" stroke="rgba(255,255,255,0.6)" stroke-width="0.6"/>
+                <path d="M 150 100 Q 148 92 138 88 Q 128 86 120 90 Q 115 94 116 100 Q 115 106 120 110 Q 128 114 138 112 Q 148 108 150 100 Z" fill="white" stroke="rgba(255,255,255,0.6)" stroke-width="0.6"/>
+                <path d="M 100 150 Q 108 148 112 138 Q 114 128 110 120 Q 106 115 100 116 Q 94 115 90 120 Q 86 128 88 138 Q 92 148 100 150 Z" fill="white" stroke="rgba(255,255,255,0.6)" stroke-width="0.6"/>
+                <path d="M 50 100 Q 52 108 62 112 Q 72 114 80 110 Q 85 106 84 100 Q 85 94 80 90 Q 72 86 62 88 Q 52 92 50 100 Z" fill="white" stroke="rgba(255,255,255,0.6)" stroke-width="0.6"/>
+                <!-- Center -->
+                <circle cx="100" cy="100" r="12" fill="url(#footer-center)" stroke="#FFDB8A" stroke-width="0.5"/>
+                <circle cx="100" cy="95" r="1.5" fill="white"/>
+                <circle cx="105" cy="98" r="1.5" fill="white"/>
+                <circle cx="103" cy="103" r="1.5" fill="white"/>
+                <circle cx="97" cy="103" r="1.5" fill="white"/>
+                <circle cx="95" cy="98" r="1.5" fill="white"/>
+            </svg>
+            <p>&copy; 2025 Renata's Cleaning Service. All rights reserved.</p>
+            <p>Professional residential and commercial cleaning with over 10 years of experience</p>
+        </div>
+    </footer>
+</body>
+</html>

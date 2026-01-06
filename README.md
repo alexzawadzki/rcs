@@ -1,6 +1,6 @@
 # Renata's Cleaning Service
 
-A professional, responsive website for Renata's Cleaning Service - a residential and commercial cleaning company with over 10 years of experience.
+A professional, responsive website for Renata's Cleaning Service - a residential and commercial cleaning company with over 25 years of experience.
 
 ## Overview
 

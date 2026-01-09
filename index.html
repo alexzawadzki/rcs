@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Renata's Cleaning Service - Professional residential and commercial cleaning services with attention to detail. Serving the community for over 25 years.">
+    <meta name="description" content="Renata's Cleaning Service - Professional residential and commercial cleaning services in Hartford County and surrounding areas. Over 25 years of experience. Insured and bonded.">
+    <meta name="keywords" content="cleaning service, house cleaning, commercial cleaning, Hartford County, Connecticut, professional cleaning">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Renata's Cleaning Service | Pure Elegance in Every Detail">
+    <meta property="og:description" content="Professional residential and commercial cleaning services in Hartford County. Over 25 years of experience. Insured & bonded. Free quotes available.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://renatascleaning.com">
+    <meta property="og:image" content="https://renatascleaning.com/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Renata's Cleaning Service | Pure Elegance in Every Detail">
+    <meta name="twitter:description" content="Professional residential and commercial cleaning services in Hartford County. Over 25 years of experience.">
+    
     <title>Renata's Cleaning Service | Pure Elegance in Every Detail</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Local Business Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Renata's Cleaning Service",
+        "image": "https://renatascleaning.com/logo.png",
+        "telephone": "+1-860-796-5222",
+        "email": "Renata@renatascleaning.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "CT",
+            "addressCountry": "US"
+        },
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Hartford County and surrounding areas"
+        },
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "11"
+        },
+        "description": "Professional residential and commercial cleaning services with over 25 years of experience. Insured and bonded."
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -88,6 +132,39 @@
             outline-offset: 4px;
         }
 
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--charcoal);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -7px);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-red) 0%, var(--deep-red) 100%);
@@ -141,9 +218,20 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 1.2rem;
             font-weight: 300;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem;
             opacity: 0.95;
             letter-spacing: 0.5px;
+        }
+
+        .service-area-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.25);
         }
 
         .rating {
@@ -201,6 +289,87 @@
         .btn-secondary {
             background: var(--magnolia-white);
             color: var(--primary-red);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .trust-badge svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 2rem;
+            background: var(--magnolia-white);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--warm-gray);
+            line-height: 1.9;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .about-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--cream);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .about-highlight-icon {
+            font-size: 1.75rem;
+        }
+
+        .about-highlight-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--charcoal);
+            font-size: 0.95rem;
         }
 
         /* Services Section */
@@ -274,6 +443,57 @@
             color: var(--warm-gray);
             line-height: 1.8;
             font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--deep-red) 100%);
+            text-align: center;
+            color: var(--magnolia-white);
+        }
+
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .pricing p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .pricing-features {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .pricing-feature svg {
+            width: 24px;
+            height: 24px;
+            color: var(--soft-green);
         }
 
         /* Why Choose Us Section */
@@ -366,10 +586,112 @@
             color: var(--charcoal);
         }
 
+        .review-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .review-cta p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--warm-gray);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .review-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-red);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .review-cta a:hover {
+            background: var(--primary-red);
+            color: var(--magnolia-white);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 100px 2rem;
+            background: var(--magnolia-white);
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--cream);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-red);
+        }
+
+        .faq-question svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 2rem 1.5rem;
+        }
+
+        .faq-answer p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--warm-gray);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
         /* Contact Section */
         .contact {
             padding: 100px 2rem;
-            background: var(--magnolia-white);
+            background: var(--cream);
         }
 
         .contact-content {
@@ -387,7 +709,7 @@
         }
 
         .contact-item {
-            background: var(--cream);
+            background: var(--magnolia-white);
             padding: 2.5rem;
             border-radius: 12px;
             min-width: 280px;
@@ -410,6 +732,14 @@
             text-decoration: none;
             font-size: 1.15rem;
             font-weight: 500;
+            display: block;
+        }
+
+        .contact-item p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--warm-gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
         }
 
         .contact-item a:hover,
@@ -418,6 +748,50 @@
             text-decoration: underline;
             outline: 2px solid var(--primary-red);
             outline-offset: 4px;
+        }
+
+        /* Service Area Map Section */
+        .service-area {
+            padding: 80px 2rem;
+            background: var(--magnolia-white);
+            text-align: center;
+        }
+
+        .service-area h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .service-area p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--warm-gray);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .area-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .area-tag {
+            background: var(--cream);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            border: 1px solid var(--light-gray);
         }
 
         /* Footer */
@@ -449,17 +823,41 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--magnolia-white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+
             .hero h1 {
                 font-size: 2.25rem;
             }
 
             .hero p {
                 font-size: 1.05rem;
-            }
-
-            .nav-links {
-                gap: 1.25rem;
-                font-size: 0.9rem;
             }
 
             .section-title {
@@ -488,6 +886,26 @@
                 width: 90px !important;
                 height: 90px !important;
             }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .pricing-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
 
         /* Accessibility: Focus visible for keyboard navigation */
@@ -511,10 +929,28 @@
         .skip-link:focus {
             top: 0;
         }
+
+        /* Mobile overlay */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <header>
         <nav>
@@ -557,10 +993,17 @@
                 </svg>
                 <span>Renata's Cleaning Service</span>
             </div>
-            <ul class="nav-links">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#why-choose">Why Choose Us</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -607,12 +1050,61 @@
                 </svg>
                 <h1>Pure Elegance in Every Detail</h1>
                 <p>Professional residential and commercial cleaning services with meticulous attention to detail</p>
+                <div class="service-area-badge">
+                    📍 Serving Hartford County & Surrounding Areas
+                </div>
                 <div class="rating" role="img" aria-label="Rated 4.6 out of 5 stars based on 11 reviews">
                     <span class="stars">★★★★★</span>
                     <span>4.6 (11 Reviews)</span>
                 </div>
                 <div class="cta-buttons">
                     <a href="tel:8607965222" class="btn btn-primary">Call (860) 796-5222</a>
+                    <a href="#contact" class="btn btn-secondary">Get a Free Quote</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        <span>Insured & Bonded</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <span>25+ Years Experience</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        <span>Free Quotes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Renata's Cleaning Service</h2>
+                        <p>For over 25 years, Renata's Cleaning Service has been bringing spotless homes and offices to Hartford County and the surrounding Connecticut communities. What started as a passion for creating clean, healthy spaces has grown into a trusted business built on dedication, reliability, and an unwavering commitment to excellence.</p>
+                        <p>Our team takes pride in treating every home and business as if it were our own. We believe cleaning isn't just about appearances—it's about creating environments where families thrive and businesses succeed. That's why we go beyond surface cleaning to deliver thorough, detail-oriented service that makes a real difference.</p>
+                        <p>When you choose Renata's, you're choosing a team that genuinely cares about your space and your satisfaction.</p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="about-highlight">
+                            <span class="about-highlight-icon">🏆</span>
+                            <span class="about-highlight-text">Over 25 Years of Trusted Service</span>
+                        </div>
+                        <div class="about-highlight">
+                            <span class="about-highlight-icon">👨‍👩‍👧‍👦</span>
+                            <span class="about-highlight-text">Family-Owned & Operated</span>
+                        </div>
+                        <div class="about-highlight">
+                            <span class="about-highlight-icon">🛡️</span>
+                            <span class="about-highlight-text">Fully Insured & Bonded</span>
+                        </div>
+                        <div class="about-highlight">
+                            <span class="about-highlight-icon">✨</span>
+                            <span class="about-highlight-text">Meticulous Attention to Detail</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -630,7 +1122,7 @@
                     <div class="service-card">
                         <div class="service-icon" role="img" aria-label="Building icon">🏢</div>
                         <h3>Commercial Cleaning</h3>
-                        <p>Professional office and business cleaning services. We maintain your commercial spaces with the same meticulous attention to detail that has earned our reputation over 10+ years.</p>
+                        <p>Professional office and business cleaning services. We maintain your commercial spaces with the same meticulous attention to detail that has earned our reputation over 25+ years.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon" role="img" aria-label="Apartment icon">🏘️</div>
@@ -642,7 +1134,53 @@
                         <h3>Deep Cleaning Services</h3>
                         <p>Comprehensive deep cleaning that reaches every corner of your space. Perfect for seasonal cleaning, move-ins, or when your space needs that extra touch of perfection.</p>
                     </div>
+                    <div class="service-card">
+                        <div class="service-icon" role="img" aria-label="Window icon">🪟</div>
+                        <h3>Window Cleaning</h3>
+                        <p>Crystal-clear windows inside and out. Let the natural light shine through with our professional window cleaning services for residential and commercial properties.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" role="img" aria-label="Carpet icon">🧹</div>
+                        <h3>Carpet Cleaning</h3>
+                        <p>Refresh and revitalize your carpets with our thorough carpet cleaning services. We remove deep-set dirt, stains, and allergens to restore your floors to their best.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" role="img" aria-label="Construction icon">🔨</div>
+                        <h3>Post-Construction Cleaning</h3>
+                        <p>Renovation complete? We handle the heavy-duty cleanup so you can enjoy your newly transformed space without the dust, debris, and construction mess.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" role="img" aria-label="Moving icon">📦</div>
+                        <h3>Move-In / Move-Out Cleaning</h3>
+                        <p>Starting fresh or leaving a space spotless for the next occupant? Our move-in and move-out cleaning ensures every surface is thoroughly cleaned and ready.</p>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <div class="pricing-content">
+                <h2>Transparent & Fair Pricing</h2>
+                <p>Every home and business is unique, which is why we provide custom quotes tailored to your specific needs. We'll assess your space and give you an honest, competitive price with no hidden fees or surprises.</p>
+                <div class="pricing-features">
+                    <div class="pricing-feature">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Free In-Home Estimates</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>No Hidden Fees</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Flexible Scheduling</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Satisfaction Guaranteed</span>
+                    </div>
+                </div>
+                <a href="tel:8607965222" class="btn btn-secondary">Get Your Free Quote Today</a>
             </div>
         </section>
 
@@ -667,8 +1205,8 @@
                     </div>
                     <div class="feature">
                         <div class="feature-icon" role="img" aria-label="Shield icon">🛡️</div>
-                        <h3>Professional Standards</h3>
-                        <p>Respectful service with proper safety protocols to protect your home or business space</p>
+                        <h3>Insured & Bonded</h3>
+                        <p>Your peace of mind matters. We're fully insured and bonded to protect your home or business</p>
                     </div>
                 </div>
             </div>
@@ -695,6 +1233,98 @@
                         <p class="testimonial-author">— Mark DeBisschop</p>
                     </div>
                 </div>
+                <div class="review-cta">
+                    <p>Love our service? We'd appreciate your feedback!</p>
+                    <a href="https://g.page/r/CS_Y3WFavzo8EAE/review" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Leave Us a Google Review
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Answers to common questions about our services</p>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Do you bring your own cleaning supplies?
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We bring all of our own professional-grade cleaning supplies and equipment. If you have specific products you prefer us to use, just let us know and we'll be happy to accommodate your preferences.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Are you insured and bonded?
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! Renata's Cleaning Service is fully insured and bonded for your peace of mind. You can trust that your home or business is protected when our team is working.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What if I need to reschedule?
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No problem at all! We understand that life happens. Just give us a call or send a text as soon as you know you need to reschedule, and we'll work with you to find a new time that fits your schedule.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How do I get a quote?
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Getting a quote is easy! Give us a call at (860) 796-5222 or send us an email at Renata@renatascleaning.com. We'll discuss your needs and provide a free, no-obligation estimate. You can also text us for a quick response!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What areas do you serve?
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We proudly serve Hartford County and the surrounding areas in Connecticut. This includes Hartford, West Hartford, Farmington, Avon, Simsbury, Canton, Bristol, New Britain, and many other nearby communities. Not sure if we serve your area? Just ask!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How often should I schedule cleaning?
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>It depends on your needs! We offer weekly, bi-weekly, monthly, and one-time cleaning options. Most of our residential clients prefer bi-weekly service, but we're happy to customize a schedule that works best for your lifestyle and budget.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-area">
+            <div class="container">
+                <h2>Our Service Area</h2>
+                <p>Proudly serving Hartford County and surrounding Connecticut communities</p>
+                <div class="area-tags">
+                    <span class="area-tag">Hartford</span>
+                    <span class="area-tag">West Hartford</span>
+                    <span class="area-tag">Farmington</span>
+                    <span class="area-tag">Avon</span>
+                    <span class="area-tag">Simsbury</span>
+                    <span class="area-tag">Canton</span>
+                    <span class="area-tag">Bristol</span>
+                    <span class="area-tag">New Britain</span>
+                    <span class="area-tag">Glastonbury</span>
+                    <span class="area-tag">Manchester</span>
+                    <span class="area-tag">Wethersfield</span>
+                    <span class="area-tag">Rocky Hill</span>
+                    <span class="area-tag">& Surrounding Areas</span>
+                </div>
             </div>
         </section>
 
@@ -702,11 +1332,17 @@
             <div class="container">
                 <div class="contact-content">
                     <h2 class="section-title">Get In Touch</h2>
-                    <p class="section-subtitle">Ready to experience exceptional cleaning service? Contact us today!</p>
+                    <p class="section-subtitle">Ready to experience exceptional cleaning service? Contact us today for a free quote!</p>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <h3>📞 Call Us</h3>
+                            <h3>📞 Call or Text</h3>
                             <a href="tel:8607965222">(860) 796-5222</a>
+                            <p>Call or text anytime!</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>✉️ Email Us</h3>
+                            <a href="mailto:Renata@renatascleaning.com">Renata@renatascleaning.com</a>
+                            <p>We'll respond within 24 hours</p>
                         </div>
                     </div>
                 </div>
@@ -754,7 +1390,77 @@
             </svg>
             <p>&copy; 2025 Renata's Cleaning Service. All rights reserved.</p>
             <p>Professional residential and commercial cleaning with over 25 years of experience</p>
+            <p>Serving Hartford County & Surrounding Areas | Insured & Bonded</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            
+            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

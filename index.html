@@ -906,6 +906,88 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            /* Reduce nav padding to free space for logo + hamburger */
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            /* Prevent logo text from overflowing into the hamburger button */
+            .logo {
+                min-width: 0;
+                overflow: hidden;
+                flex-shrink: 1;
+            }
+
+            .logo span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            /* Adjust hero for reduced header height (~72px with new nav padding) */
+            .hero {
+                padding: 100px 1.5rem 70px;
+                margin-top: 72px;
+            }
+
+            /* Reduce excessive 100px section padding on mobile */
+            .about,
+            .services,
+            .why-choose,
+            .testimonials,
+            .faq,
+            .contact {
+                padding: 60px 1.5rem;
+            }
+
+            .pricing {
+                padding: 50px 1.5rem;
+            }
+
+            .service-area {
+                padding: 50px 1.5rem;
+            }
+
+            /* Force single-column grids to prevent card overflow on small screens.
+               testimonials-grid (minmax 320px) overflows even on iPhone SE (375px).
+               services-grid (minmax 300px) overflows on 360px phones. */
+            .services-grid,
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid,
+            .testimonials-grid {
+                margin-top: 2rem;
+            }
+
+            /* Increase max-height so long FAQ answers aren't clipped on narrow screens */
+            .faq-item.active .faq-answer {
+                max-height: 400px;
+                padding: 0 1.5rem 1.25rem;
+            }
+
+            .faq-question {
+                padding: 1.25rem 1.5rem;
+                font-size: 1.15rem;
+            }
+
+            /* Stack contact items and remove min-width that causes overflow */
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-item {
+                min-width: unset;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2.5rem;
+            }
         }
 
         /* Accessibility: Focus visible for keyboard navigation */

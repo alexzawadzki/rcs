@@ -10,12 +10,4 @@ eleventyExcludeFromCollections: true
     <lastmod>{{ buildDate | isoDate }}</lastmod>
   </url>
 {%- endfor %}
-{%- for service in services %}
-{%- if service.slug != "house-cleaning" %}
-  <url>
-    <loc>{{ ("/services/" + service.slug + "/") | absoluteUrl(site.url) }}</loc>
-    <lastmod>{{ buildDate | isoDate }}</lastmod>
-  </url>
-{%- endif %}
-{%- endfor %}
 </urlset>

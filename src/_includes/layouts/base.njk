@@ -44,6 +44,7 @@
   {%- for sheet in ["tokens", "base", "components", "pages"] %}
   <link rel="stylesheet" href="{{ ('/assets/css/' ~ sheet ~ '.css') | assetUrl }}">
   {%- endfor %}
+  <script type="application/ld+json">{{ buildSchema({ "site": site, "towns": towns, "reviews": reviews, "services": services, "pageUrl": page.url, "breadcrumbs": breadcrumbs, "service": service, "includeFaq": faqSchema, "faqs": faqs }) | safe }}</script>
   <script src="{{ '/assets/js/main.js' | assetUrl }}" defer></script>
 </head>
 <body>

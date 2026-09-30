@@ -1,6 +1,7 @@
 import {
   jsonLd, absoluteUrl, isoDate, createAssetUrl, serviceBySlug, whereCategory, sitemapPages,
 } from "./src/_lib/filters.js";
+import { buildSchemaGraph } from "./src/_lib/schema.js";
 
 const INPUT_DIR = "src";
 const ROOT_PASSTHROUGH = [
@@ -22,6 +23,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("serviceBySlug", serviceBySlug);
   eleventyConfig.addFilter("whereCategory", whereCategory);
   eleventyConfig.addFilter("sitemapPages", sitemapPages);
+
+  eleventyConfig.addNunjucksGlobal("buildSchema", (input) => jsonLd(buildSchemaGraph(input)));
 
   eleventyConfig.addGlobalData("buildDate", () => new Date());
 }

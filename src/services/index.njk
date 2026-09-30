@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: "Cleaning Services in Hartford County, CT | Renata's"
+description: "Residential and commercial cleaning in Hartford County, CT: house, office, deep, move-out, condo, window, carpet and post-construction cleaning."
+breadcrumbs:
+  - label: Services
+    url: /services/
+---
+{% from "partials/macros.njk" import serviceCard %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Our services</p>
+    <h1>Cleaning Services in Hartford County, CT</h1>
+    <p class="lead">Residential and commercial cleaning with the same meticulous standard. Every service is quoted free, based on your space and your schedule.</p>
+  </div>
+</section>
+{%- for group in serviceGroups %}
+<section class="section{% if loop.index % 2 == 0 %} section--linen{% endif %}" aria-labelledby="group-{{ group.key }}">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="group-{{ group.key }}">{{ group.label }}</h2>
+      <p class="lead">{{ group.intro }}</p>
+    </div>
+    <div class="card-grid">
+      {%- for s in services | whereCategory(group.key) %}{{ serviceCard(s) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}

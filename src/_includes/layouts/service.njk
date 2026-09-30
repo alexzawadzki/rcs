@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/macros.njk" import icon, serviceCard %}
+{%- set categoryLabels = { "residential": "Residential cleaning", "commercial": "Commercial cleaning", "specialty": "Specialty cleaning" } %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">{{ categoryLabels[service.category] }}</p>
+    <h1>{{ service.h1 }}</h1>
+    <p class="lead">{{ service.summary }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="tel:{{ site.phone.tel }}">{{ icon("phone") }}Call {{ site.phone.display }}</a>
+      <a class="btn btn-outline" href="/contact/">Get a free quote</a>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="container service-layout">
+    <div class="service-main">
+      <div class="prose">
+        {%- for paragraph in service.intro %}
+        <p>{{ paragraph }}</p>
+        {%- endfor %}
+      </div>
+
+      <section class="included-card" aria-labelledby="included-title">
+        <h2 id="included-title">What’s included</h2>
+        <ul class="checklist checklist--columns" role="list">
+          {%- for item in service.included %}
+          <li>{{ icon("check") }}<span>{{ item }}</span></li>
+          {%- endfor %}
+        </ul>
+      </section>
+
+      <section aria-labelledby="ideal-title">
+        <h2 id="ideal-title">Ideal for</h2>
+        <ul class="checklist" role="list">
+          {%- for item in service.idealFor %}
+          <li>{{ icon("check") }}<span>{{ item }}</span></li>
+          {%- endfor %}
+        </ul>
+      </section>
+
+      {%- if service.scheduling %}
+      <section class="schedule-note" aria-labelledby="schedule-title">
+        {{ icon("calendar") }}
+        <div>
+          <h2 id="schedule-title">Scheduling</h2>
+          <p>{{ service.scheduling }}</p>
+        </div>
+      </section>
+      {%- endif %}
+
+      <section aria-labelledby="service-faq-title">
+        <h2 id="service-faq-title">{{ service.name }} questions</h2>
+        <div class="faq-list">
+          {%- for f in service.faqs %}
+          <details class="faq-item"><summary>{{ f.q }}</summary><div class="faq-answer"><p>{{ f.a }}</p></div></details>
+          {%- endfor %}
+        </div>
+      </section>
+    </div>
+
+    <aside class="aside-card" aria-labelledby="quote-title">
+      <h2 id="quote-title">Free, no-obligation quote</h2>
+      <p>Tell us about your space and schedule. Call or text anytime, or email us and we’ll reply within 24 hours.</p>
+      <ul class="aside-contact" role="list">
+        <li><a href="tel:{{ site.phone.tel }}">{{ icon("phone") }}{{ site.phone.display }}</a></li>
+        <li><a href="sms:{{ site.phone.sms }}">{{ icon("message") }}Text us</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ icon("mail") }}{{ site.email }}</a></li>
+      </ul>
+      <ul class="checklist" role="list">
+        <li>{{ icon("award") }}<span>25+ years of experience</span></li>
+        <li>{{ icon("shield") }}<span>Fully insured &amp; bonded</span></li>
+        <li>{{ icon("heart") }}<span>Family-owned &amp; operated</span></li>
+      </ul>
+    </aside>
+  </div>
+</div>
+
+<section class="section section--linen" aria-labelledby="related-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="related-title">Related services</h2>
+    </div>
+    <div class="card-grid">
+      {%- for slug in service.related %}{{ serviceCard(services | serviceBySlug(slug)) }}{% endfor %}
+    </div>
+    <p class="area-line">{{ icon("map-pin") }}<span>{{ service.name }} is available in
+      {%- for t in towns %} <a href="/service-area/#{{ t.slug }}">{{ t.name }}</a>{{ "," if not loop.last }}{% endfor %}
+      and surrounding {{ site.county }} towns. <a href="/service-area/">See our full service area</a>.</span></p>
+  </div>
+</section>

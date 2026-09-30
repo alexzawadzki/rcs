@@ -1,7 +1,13 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAdsId }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '{{ site.googleAdsId }}');
+  // The 150 KB gtag.js is loaded after the page has painted; queued calls above are replayed when it arrives.
+  window.addEventListener('load', function () {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.googleAdsId }}';
+    document.head.appendChild(script);
+  });
 </script>

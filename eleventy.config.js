@@ -1,5 +1,5 @@
 import {
-  jsonLd, absoluteUrl, isoDate, createAssetUrl, serviceBySlug, whereCategory, sitemapPages,
+  jsonLd, absoluteUrl, isoDate, createAssetUrl, createInlineAsset, serviceBySlug, whereCategory, sitemapPages,
 } from "./src/_lib/filters.js";
 import { buildSchemaGraph } from "./src/_lib/schema.js";
 
@@ -10,13 +10,18 @@ const ROOT_PASSTHROUGH = [
 ];
 
 export default function (eleventyConfig) {
-  const { assetUrl, reset } = createAssetUrl(INPUT_DIR);
-  eleventyConfig.on("eleventy.before", reset);
+  const { assetUrl, reset: resetAssetUrls } = createAssetUrl(INPUT_DIR);
+  const { inlineAsset, reset: resetInlineAssets } = createInlineAsset(INPUT_DIR);
+  eleventyConfig.on("eleventy.before", () => {
+    resetAssetUrls();
+    resetInlineAssets();
+  });
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   ROOT_PASSTHROUGH.forEach((glob) => eleventyConfig.addPassthroughCopy(glob));
 
   eleventyConfig.addFilter("assetUrl", assetUrl);
+  eleventyConfig.addFilter("inlineAsset", inlineAsset);
   eleventyConfig.addFilter("jsonLd", jsonLd);
   eleventyConfig.addFilter("absoluteUrl", absoluteUrl);
   eleventyConfig.addFilter("isoDate", isoDate);

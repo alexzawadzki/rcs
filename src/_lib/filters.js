@@ -37,6 +37,25 @@ export function createAssetUrl(inputDir) {
   return { assetUrl, reset: () => cache.clear() };
 }
 
+// Returns a source file's contents for inlining into a template (cached per build).
+export function createInlineAsset(inputDir) {
+  const cache = new Map();
+
+  function inlineAsset(urlPath) {
+    if (!cache.has(urlPath)) {
+      const filePath = path.join(inputDir, urlPath);
+      try {
+        cache.set(urlPath, readFileSync(filePath, "utf8"));
+      } catch (cause) {
+        throw new Error(`inlineAsset: cannot read ${filePath}`, { cause });
+      }
+    }
+    return cache.get(urlPath);
+  }
+
+  return { inlineAsset, reset: () => cache.clear() };
+}
+
 export function serviceBySlug(services, slug) {
   const match = services.find((service) => service.slug === slug);
   if (!match) throw new Error(`Unknown service slug "${slug}"`);

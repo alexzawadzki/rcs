@@ -215,7 +215,7 @@ a:hover { color: var(--garnet); }
 @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .footer-grid { grid-template-columns: 1.5fr 1fr 0.9fr 1.2fr; } }
 .footer-brand .logo-mark { width: 52px; height: 52px; }
-.footer-tagline { margin-block: var(--space-l) var(--space-s); font-family: var(--font-display); font-size: 1.5rem; font-style: italic; color: var(--magnolia); }
+.footer-tagline { margin-block: var(--space-l) var(--space-s); font-family: var(--font-display); font-size: 1.5rem; font-style: italic; font-weight: 500; color: var(--magnolia); }
 .footer-title { margin-bottom: var(--space-m); font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blush); }
 .site-footer ul { display: grid; gap: 0.55rem; padding: 0; list-style: none; }
 .site-footer a { color: var(--magnolia); text-decoration: none; }

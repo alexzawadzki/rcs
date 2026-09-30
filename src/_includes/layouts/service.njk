@@ -2,10 +2,9 @@
 layout: layouts/base.njk
 ---
 {% from "partials/macros.njk" import icon, serviceCard %}
-{%- set categoryLabels = { "residential": "Residential cleaning", "commercial": "Commercial cleaning", "specialty": "Specialty cleaning" } %}
 <section class="page-hero">
   <div class="container">
-    <p class="eyebrow">{{ categoryLabels[service.category] }}</p>
+    <p class="eyebrow">{%- for g in serviceGroups %}{% if g.key == service.category %}{{ g.eyebrow }}{% endif %}{% endfor %}</p>
     <h1>{{ service.h1 }}</h1>
     <p class="lead">{{ service.summary }}</p>
     <div class="btn-row">

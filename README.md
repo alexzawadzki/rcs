@@ -53,17 +53,19 @@ Run `npm run check` before pushing; the tests catch missing fields, over-long ti
 
 ### Cutover from GitHub Pages
 
-1. Open the preview deployment for the `redesign` branch and review every page.
-2. Merge `redesign` into `main`; wait for the production deploy to finish.
-3. Pages project → **Custom domains** → add `renatascleaning.com` and `www.renatascleaning.com`. If the domain's DNS is on Cloudflare the records are created for you; otherwise follow the CNAME/nameserver instructions shown.
-4. Redirect `www` to the bare domain: **Rules → Redirect Rules** → when hostname equals `www.renatascleaning.com`, dynamic redirect to `concat("https://renatascleaning.com", http.request.uri.path)` with status 301.
-5. Verify:
+1. Add `renatascleaning.com` as a site (zone) in Cloudflare on the Free plan. Let it import the existing DNS records, then change the nameservers at the domain registrar to the two Cloudflare gives you and wait until the zone shows **Active**. The old GitHub Pages site keeps serving during this.
+2. Open the preview deployment for the `redesign` branch and review every page.
+3. Merge `redesign` into `main`; wait for the production deploy to finish.
+4. Pages project → **Custom domains** → add `renatascleaning.com` and `www.renatascleaning.com`. If the domain's DNS is on Cloudflare the records are created for you; otherwise follow the CNAME/nameserver instructions shown. Adding the custom domain replaces the imported GitHub Pages records for the apex and `www`.
+5. Redirect `www` to the bare domain: **Rules → Redirect Rules** → when hostname equals `www.renatascleaning.com`, dynamic redirect to `concat("https://renatascleaning.com", http.request.uri.path)` with status 301.
+6. Verify:
    - `curl -sI https://renatascleaning.com/does-not-exist/` → `HTTP/2 404`
    - `curl -sI https://<project>.pages.dev/` → includes `x-robots-tag: noindex`
    - `curl -sI https://www.renatascleaning.com/about/` → `301` to `https://renatascleaning.com/about/`
-6. GitHub → repo **Settings → Pages** → unpublish / disable GitHub Pages so the site isn't served twice.
-7. Google Search Console → **Sitemaps** → submit `https://renatascleaning.com/sitemap.xml`; use **URL Inspection** to request indexing for the home page and the house-cleaning and commercial-cleaning pages.
-8. Google Business Profile → confirm the website field is `https://renatascleaning.com/`.
+   - `curl -sI http://renatascleaning.com/` → `301` to `https://…` (enable **SSL/TLS → Edge Certificates → Always Use HTTPS** if not)
+7. GitHub → repo **Settings → Pages** → unpublish / disable GitHub Pages so the site isn't served twice, and delete any leftover GitHub Pages `A`/`AAAA`/`CNAME` records in the Cloudflare DNS tab.
+8. Google Search Console → **Sitemaps** → submit `https://renatascleaning.com/sitemap.xml`; use **URL Inspection** to request indexing for the home page and the house-cleaning and commercial-cleaning pages.
+9. Google Business Profile → confirm the website field is `https://renatascleaning.com/`.
 
 ## Project structure
 

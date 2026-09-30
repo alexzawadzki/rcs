@@ -9,7 +9,7 @@ description: "House cleaning, office cleaning & deep cleaning in Hartford County
   <div class="container hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">{{ site.tagline }}</p>
-      <h1>House &amp; Office Cleaning <em>in Hartford County, CT</em></h1>
+      <h1>House &amp; Office Cleaning <span class="hero-accent">in Hartford County, CT</span></h1>
       <p class="lead">Family-owned for more than 25 years, we clean homes and businesses with real attention to detail. We move things to clean beneath them, not around them, and we’re fully insured &amp; bonded.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="tel:{{ site.phone.tel }}">{{ icon("phone") }}Call {{ site.phone.display }}</a>
@@ -55,7 +55,7 @@ description: "House cleaning, office cleaning & deep cleaning in Hartford County
       <article class="feature-card{% if isCommercial %} feature-card--dark{% endif %}">
         {{ logoMark("feature-card-petal" ~ (" logo-mark--reversed" if isCommercial else "")) }}
         <span class="icon-badge">{{ icon(s.icon) }}</span>
-        <p class="eyebrow">{{ "For your business" if isCommercial else "For your home" }}</p>
+        <p class="eyebrow">{%- for g in serviceGroups %}{% if g.key == s.category %}{{ g.cardLabel }}{% endif %}{% endfor %}</p>
         <h3><a href="/services/{{ s.slug }}/">{{ s.name }}</a></h3>
         <p>{{ s.summary }}</p>
         <span class="card-link" aria-hidden="true">Explore {{ s.name | lower }} {{ icon("arrow-right") }}</span>

@@ -27,7 +27,6 @@ test("sitemap lists exactly the indexable pages", () => {
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]).sort();
   const expected = loadPages().filter(isIndexable).map((p) => `${SITE_URL}${p.url}`).sort();
   assert.deepEqual(locs, expected);
-  assert.match(xml, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
 });
 
 test("robots.txt allows crawling and points at the sitemap", () => {
@@ -48,6 +47,7 @@ test("_headers sets security headers on every path", () => {
   const all = headerRules(readSiteFile("_headers")).get("/*") ?? [];
   assert.ok(all.includes("X-Frame-Options: DENY"));
   assert.ok(all.some((h) => h.startsWith("Permissions-Policy:")));
+  assert.ok(all.includes("Referrer-Policy: strict-origin-when-cross-origin"));
 });
 
 test("_headers caches only content-hashed assets immutably", () => {

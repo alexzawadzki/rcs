@@ -1,7 +1,8 @@
-# Cloudflare Pages response headers. Pages already adds X-Content-Type-Options and Referrer-Policy.
+# Cloudflare Pages response headers. Pages already adds X-Content-Type-Options.
 /*
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Referrer-Policy: strict-origin-when-cross-origin
 
 # Content-hashed via ?v= in templates, so safe to cache for a year.
 /assets/css/*

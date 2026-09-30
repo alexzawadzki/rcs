@@ -7,7 +7,6 @@ eleventyExcludeFromCollections: true
 {%- for item in collections.all | sitemapPages %}
   <url>
     <loc>{{ item.url | absoluteUrl(site.url) }}</loc>
-    <lastmod>{{ buildDate | isoDate }}</lastmod>
   </url>
 {%- endfor %}
 </urlset>

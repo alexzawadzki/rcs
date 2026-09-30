@@ -79,6 +79,14 @@ test("brand palette is exact", () => {
   });
 });
 
+test("every service group has a label, intro, eyebrow and cardLabel", () => {
+  groups.forEach((g) => {
+    ["label", "intro", "eyebrow", "cardLabel"].forEach((field) => {
+      assert.ok(typeof g[field] === "string" && g[field].length > 0, `${g.key} missing ${field}`);
+    });
+  });
+});
+
 test("nav links are root-relative with trailing slashes", () => {
   nav.forEach((item) => assert.match(item.url, /^\/(?:[a-z0-9-]+\/)*$/));
 });

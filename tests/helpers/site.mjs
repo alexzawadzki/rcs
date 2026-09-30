@@ -52,8 +52,6 @@ export function loadPages() {
   return listSiteFiles(".html").map((rel) => ({ rel, url: urlForFile(rel), html: readSiteFile(rel) }));
 }
 
-export const isIndexable = (page) => page.url !== "/404.html";
-
 export function parseAttributes(attrText) {
   const attrs = {};
   for (const m of attrText.matchAll(/([^\s=/]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g)) {
@@ -76,6 +74,8 @@ export function getMetaContent(html, key, value) {
   const tag = findTags(html, "meta").find((attrs) => attrs[key] === value);
   return tag ? tag.content : null;
 }
+
+export const isIndexable = (page) => !/noindex/i.test(getMetaContent(page.html, "name", "robots") ?? "");
 
 export function getCanonical(html) {
   const tag = findTags(html, "link").find((attrs) => attrs.rel === "canonical");

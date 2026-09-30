@@ -107,7 +107,7 @@ a:hover { color: var(--garnet); }
 /* Header + navigation (no transform/filter on the header: the mobile drawer is position: fixed inside it) */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgb(255 254 249 / 0.97);
+  background: color-mix(in srgb, var(--magnolia) 97%, transparent);
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-l); min-height: var(--header-h); }

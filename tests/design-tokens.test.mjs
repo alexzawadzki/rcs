@@ -28,3 +28,10 @@ test("CSS files stay focused", () => {
 test("pollen gold is never used as a text color", () => {
   CSS_FILES.forEach((file) => assert.doesNotMatch(readFileSync(file, "utf8"), /(?<![-\w])color:\s*var\(--pollen\)/, file));
 });
+
+test("the mobile drawer is only off-canvas when JavaScript has run", () => {
+  const css = readFileSync("src/assets/css/base.css", "utf8");
+  const chunks = css.split("}").filter((chunk) => chunk.includes("translateX(100%)"));
+  assert.ok(chunks.length > 0, "expected at least one translateX(100%) rule");
+  chunks.forEach((chunk) => assert.match(chunk, /\.js\s+\.site-nav/, chunk));
+});

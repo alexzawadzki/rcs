@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+title: "About Renata's Cleaning Service | Hartford County, CT"
+description: "Family-owned and operated for 25+ years, Renata's Cleaning Service cleans homes and businesses across Hartford County, CT. Insured & bonded."
+breadcrumbs:
+  - label: About
+    url: /about/
+---
+{% from "partials/macros.njk" import icon, stars %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Our story</p>
+    <h1>About Renata’s Cleaning Service</h1>
+    <p class="lead">Family-owned and operated, caring for Hartford County homes and businesses for more than 25 years.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split split--top">
+    <div class="prose">
+      <p>For over 25 years, Renata’s Cleaning Service has been bringing spotless homes and offices to Hartford County and the surrounding Connecticut communities. What started as a passion for creating clean, healthy spaces has grown into a trusted business built on dedication, reliability and an unwavering commitment to excellence.</p>
+      <p>Our team takes pride in treating every home and business as if it were our own. We believe cleaning isn’t just about appearances; it’s about creating environments where families thrive and businesses succeed. That’s why we go beyond surface cleaning to deliver thorough, detail-oriented service that makes a real difference.</p>
+      <p>When you choose Renata’s, you’re choosing a team that genuinely cares about your space and your satisfaction.</p>
+    </div>
+    <ul class="highlight-card" role="list">
+      <li class="highlight"><span class="icon-badge">{{ icon("award") }}</span>Over 25 years of trusted service</li>
+      <li class="highlight"><span class="icon-badge">{{ icon("heart") }}</span>Family-owned &amp; operated</li>
+      <li class="highlight"><span class="icon-badge">{{ icon("shield") }}</span>Fully insured &amp; bonded</li>
+      <li class="highlight"><span class="icon-badge">{{ icon("sparkle") }}</span>Meticulous attention to detail</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--linen">
+  <div class="container split split--top">
+    <div>
+      <p class="eyebrow">Our standards</p>
+      <h2>How we take care of your space</h2>
+    </div>
+    <ul class="checklist" role="list">
+      <li>{{ icon("check") }}<span>We move objects to clean beneath them and never just dust around them.</span></li>
+      <li>{{ icon("check") }}<span>We put everything back in an organized way.</span></li>
+      <li>{{ icon("check") }}<span>We arrive on time and stay responsive to your requests.</span></li>
+      <li>{{ icon("check") }}<span>We bring our own professional-grade supplies, or use yours if you prefer.</span></li>
+      <li>{{ icon("check") }}<span>We’re flexible when life happens: call or text to reschedule.</span></li>
+      <li>{{ icon("check") }}<span>We’re fully insured and bonded, so your home or business is protected.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    {%- set spotlight = reviews.testimonials[1] %}
+    <figure class="testimonial testimonial--feature">
+      {{ stars(spotlight.rating ~ " out of 5 stars") }}
+      <blockquote><p>{{ spotlight.text }}</p></blockquote>
+      <figcaption>{{ spotlight.author }}, {{ reviews.platform }} review</figcaption>
+    </figure>
+  </div>
+</section>

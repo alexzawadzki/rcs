@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: "Reviews | Renata's Cleaning Service, Hartford County CT"
+description: "Read what Hartford County clients say about Renata's Cleaning Service, rated 4.6 on Google. Meticulous, reliable house and office cleaning."
+breadcrumbs:
+  - label: Reviews
+    url: /reviews/
+---
+{% from "partials/macros.njk" import stars %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Client reviews</p>
+    <h1>What Our Clients Say</h1>
+    <p class="lead">Real reviews from homeowners and businesses across {{ site.county }}.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="rating-summary">
+      <span class="rating-score">{{ reviews.ratingValue }}</span>
+      <div class="rating-meta">
+        {{ stars("Rated " ~ reviews.ratingValue ~ " out of 5") }}
+        <span>Average from {{ reviews.reviewCount }} {{ reviews.platform }} reviews</span>
+      </div>
+      <a class="btn btn-primary" href="{{ site.reviewUrl }}" target="_blank" rel="noopener noreferrer">Leave us a Google review<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </div>
+    <div class="testimonial-grid">
+      {%- for t in reviews.testimonials %}
+      <figure class="testimonial">
+        {{ stars(t.rating ~ " out of 5 stars") }}
+        <blockquote><p>{{ t.text }}</p></blockquote>
+        <figcaption>{{ t.author }}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

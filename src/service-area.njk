@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: "Cleaning Service Area: Hartford County, CT | Renata's"
+description: "House and office cleaning in Hartford, West Hartford, Farmington, Avon, Simsbury, Glastonbury, Manchester and more of Hartford County, CT."
+breadcrumbs:
+  - label: Service Area
+    url: /service-area/
+---
+{% from "partials/macros.njk" import icon %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Service area</p>
+    <h1>Cleaning Services Across Hartford County, CT</h1>
+    <p class="lead">We clean homes and businesses in {{ towns | length }} {{ site.county }} towns and the surrounding communities. Not sure if we reach you? Just ask.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="tel:{{ site.phone.tel }}">{{ icon("phone") }}Call {{ site.phone.display }}</a>
+      <a class="btn btn-outline" href="/contact/">Get a free quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="town-grid">
+      {%- for t in towns %}
+      <article class="town-card" id="{{ t.slug }}">
+        <h2>{{ icon("map-pin") }}{{ t.name }}</h2>
+        <p>{{ t.note }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--linen">
+  <div class="container">
+    <div class="section-head">
+      <h2>Services across our service area</h2>
+      <p class="lead">Every service is quoted free for your space and schedule.</p>
+    </div>
+    <ul class="town-chips" role="list">
+      {%- for s in services %}
+      <li><a href="/services/{{ s.slug }}/">{{ icon(s.icon) }}{{ s.name }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

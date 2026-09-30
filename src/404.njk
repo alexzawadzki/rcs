@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+permalink: /404.html
+title: "Page Not Found | Renata's Cleaning Service"
+description: "The page you were looking for could not be found. Explore our cleaning services or contact Renata's Cleaning Service for a free quote."
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{% from "partials/logo-mark.njk" import logoMark %}
+<section class="section not-found">
+  <div class="container narrow">
+    {{ logoMark() }}
+    <h1>We couldn’t find that page</h1>
+    <p class="lead">The page may have moved. These links will get you back on track.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/">Home</a>
+      <a class="btn btn-outline" href="/services/">Our services</a>
+      <a class="btn btn-outline" href="/contact/">Contact us</a>
+    </div>
+  </div>
+</section>

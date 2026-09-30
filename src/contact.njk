@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+title: "Contact Us for a Free Cleaning Quote | Renata's"
+description: "Call or text (860) 796-5222 or email Renata@renatascleaning.com for a free, no-obligation cleaning quote anywhere in Hartford County, CT."
+hideCta: true
+breadcrumbs:
+  - label: Contact
+    url: /contact/
+---
+{% from "partials/macros.njk" import icon %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Free quotes</p>
+    <h1>Get a Free Cleaning Quote</h1>
+    <p class="lead">Call, text or email, whichever is easiest. Quotes are free and there’s no obligation.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <a class="contact-card" href="tel:{{ site.phone.tel }}">
+        <span class="icon-badge">{{ icon("phone") }}</span>
+        <h2>Call</h2>
+        <span class="contact-value">{{ site.phone.display }}</span>
+        <span class="contact-note">Call anytime</span>
+      </a>
+      <a class="contact-card" href="sms:{{ site.phone.sms }}">
+        <span class="icon-badge">{{ icon("message") }}</span>
+        <h2>Text</h2>
+        <span class="contact-value">{{ site.phone.display }}</span>
+        <span class="contact-note">Text us for a quick response</span>
+      </a>
+      <a class="contact-card" href="mailto:{{ site.email }}">
+        <span class="icon-badge">{{ icon("mail") }}</span>
+        <h2>Email</h2>
+        <span class="contact-value">{{ site.email }}</span>
+        <span class="contact-note">We reply within 24 hours</span>
+      </a>
+    </div>
+    <div class="split split--top">
+      <div class="stack">
+        <h2>Help us quote accurately</h2>
+        <p class="lead">When you reach out, it helps to mention:</p>
+        <ul class="checklist" role="list">
+          <li>{{ icon("check") }}<span>The type of cleaning you need: house, office, deep clean, move-out and so on</span></li>
+          <li>{{ icon("check") }}<span>Your town</span></li>
+          <li>{{ icon("check") }}<span>The approximate size of your home or business</span></li>
+          <li>{{ icon("check") }}<span>How often you’d like cleaning: weekly, bi-weekly, monthly or one-time</span></li>
+        </ul>
+      </div>
+      <div class="stack">
+        <h2>Where we clean</h2>
+        <p class="lead">Homes and businesses across {{ site.county }} and the surrounding communities.</p>
+        <ul class="town-chips" role="list">
+          {%- for t in towns %}
+          <li><a href="/service-area/#{{ t.slug }}">{{ icon("map-pin") }}{{ t.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

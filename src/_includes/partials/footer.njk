@@ -1,0 +1,47 @@
+{% from "partials/macros.njk" import icon %}
+{% from "partials/logo-mark.njk" import logoMark %}
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand--light" href="/">
+          {{ logoMark("logo-mark--reversed") }}
+          <span class="brand-text"><span class="brand-name">Renata’s</span><span class="brand-sub">Cleaning Service</span></span>
+        </a>
+        <p class="footer-tagline">{{ site.tagline }}</p>
+        <p>Family-owned house and commercial cleaning serving {{ site.county }}, {{ site.regionName }} for more than 25 years. Fully insured &amp; bonded.</p>
+      </div>
+      <nav aria-label="Services">
+        <h2 class="footer-title">Services</h2>
+        <ul role="list">
+          {%- for s in services %}
+          <li><a href="/services/{{ s.slug }}/">{{ s.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      <nav aria-label="Company">
+        <h2 class="footer-title">Company</h2>
+        <ul role="list">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/service-area/">Service Area</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Get in touch</h2>
+        <ul class="footer-contact" role="list">
+          <li><a href="tel:{{ site.phone.tel }}">{{ icon("phone") }}{{ site.phone.display }}</a></li>
+          <li><a href="sms:{{ site.phone.sms }}">{{ icon("message") }}Text us</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ icon("mail") }}{{ site.email }}</a></li>
+          <li>{{ icon("map-pin") }}Serving {{ site.county }}, {{ site.region }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ buildDate.getFullYear() }} {{ site.name }}. All rights reserved.</p>
+      <p>Insured &amp; Bonded · Free Quotes · No Hidden Fees</p>
+    </div>
+  </div>
+</footer>

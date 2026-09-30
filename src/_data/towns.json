@@ -1,0 +1,14 @@
+[
+  { "slug": "hartford", "name": "Hartford", "note": "Homes, condos, apartments and downtown offices in Connecticut's capital city." },
+  { "slug": "west-hartford", "name": "West Hartford", "note": "Homes and businesses across West Hartford, from West Hartford Center to Blue Back Square." },
+  { "slug": "farmington", "name": "Farmington", "note": "Homes, condos and offices in Farmington and Unionville." },
+  { "slug": "avon", "name": "Avon", "note": "House cleaning and office cleaning throughout Avon." },
+  { "slug": "simsbury", "name": "Simsbury", "note": "Homes and businesses in Simsbury, Weatogue and West Simsbury." },
+  { "slug": "canton", "name": "Canton", "note": "Homes and businesses in Canton and Collinsville." },
+  { "slug": "bristol", "name": "Bristol", "note": "House cleaning and commercial cleaning across Bristol." },
+  { "slug": "new-britain", "name": "New Britain", "note": "Homes, apartments and offices throughout New Britain." },
+  { "slug": "glastonbury", "name": "Glastonbury", "note": "Homes and businesses in Glastonbury and South Glastonbury." },
+  { "slug": "manchester", "name": "Manchester", "note": "House cleaning and office cleaning throughout Manchester." },
+  { "slug": "wethersfield", "name": "Wethersfield", "note": "Homes and businesses in Wethersfield, including Old Wethersfield." },
+  { "slug": "rocky-hill", "name": "Rocky Hill", "note": "Homes, condos and offices in Rocky Hill." }
+]

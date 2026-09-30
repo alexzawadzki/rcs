@@ -1,0 +1,156 @@
+---
+layout: layouts/base.njk
+title: "House & Office Cleaning in Hartford County, CT | Renata's"
+description: "House cleaning, office cleaning & deep cleaning in Hartford County, CT. Family-owned, 25+ years, insured & bonded. Free quote: (860) 796-5222."
+---
+{% from "partials/macros.njk" import icon, stars, serviceCard %}
+{% from "partials/logo-mark.njk" import logoMark %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ site.tagline }}</p>
+      <h1>House &amp; Office Cleaning <span class="hero-accent">in Hartford County, CT</span></h1>
+      <p class="lead">Family-owned for more than 25 years, we clean homes and businesses with real attention to detail. We move things to clean beneath them, not around them, and we’re fully insured &amp; bonded.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="tel:{{ site.phone.tel }}">{{ icon("phone") }}Call {{ site.phone.display }}</a>
+        <a class="btn btn-outline" href="/contact/">Get a free quote</a>
+      </div>
+      <div class="hero-meta">
+        <a class="rating-chip" href="/reviews/">{{ stars("Rated " ~ reviews.ratingValue ~ " out of 5") }}<span><strong>{{ reviews.ratingValue }}</strong> from {{ reviews.reviewCount }} Google reviews</span></a>
+        <span>{{ icon("map-pin") }}Serving {{ site.county }} &amp; nearby towns</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-arch" aria-hidden="true">{{ logoMark("logo-mark--reversed") }}</div>
+      <ul class="hero-card" role="list">
+        <li>{{ icon("shield") }}Insured &amp; bonded</li>
+        <li>{{ icon("award") }}25+ years of experience</li>
+        <li>{{ icon("heart") }}Family-owned &amp; operated</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-label="Why clients trust us">
+  <div class="container">
+    <ul class="trust-strip" role="list">
+      <li class="trust-item"><span class="icon-badge">{{ icon("award") }}</span><div><strong>25+ years</strong><small>Serving {{ site.county }}</small></div></li>
+      <li class="trust-item"><span class="icon-badge">{{ icon("heart") }}</span><div><strong>Family-owned</strong><small>&amp; operated</small></div></li>
+      <li class="trust-item"><span class="icon-badge">{{ icon("shield") }}</span><div><strong>Insured &amp; bonded</strong><small>For your peace of mind</small></div></li>
+      <li class="trust-item"><span class="icon-badge">{{ icon("check") }}</span><div><strong>Free quotes</strong><small>No hidden fees</small></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Our services</p>
+      <h2>Cleaning for homes and businesses</h2>
+      <p class="lead">From weekly house cleaning to post-renovation cleanups, every service gets the same meticulous standard.</p>
+    </div>
+    <div class="feature-pair">
+      {%- for s in services | selectattr("featured") %}
+      {%- set isCommercial = s.category == "commercial" %}
+      <article class="feature-card{% if isCommercial %} feature-card--dark{% endif %}">
+        {{ logoMark("feature-card-petal" ~ (" logo-mark--reversed" if isCommercial else "")) }}
+        <span class="icon-badge">{{ icon(s.icon) }}</span>
+        <p class="eyebrow">{%- for g in serviceGroups %}{% if g.key == s.category %}{{ g.cardLabel }}{% endif %}{% endfor %}</p>
+        <h3><a href="/services/{{ s.slug }}/">{{ s.name }}</a></h3>
+        <p>{{ s.summary }}</p>
+        <span class="card-link" aria-hidden="true">Explore {{ s.name | lower }} {{ icon("arrow-right") }}</span>
+      </article>
+      {%- endfor %}
+    </div>
+    <div class="card-grid card-grid--three">
+      {%- for s in services | rejectattr("featured") %}{{ serviceCard(s) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--linen">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">The Renata’s difference</p>
+      <h2>Clean you can see in the details</h2>
+      <ul class="feature-list" role="list">
+        <li><span class="icon-badge">{{ icon("sparkle") }}</span><div><h3>Meticulous attention to detail</h3><p>We move objects to dust the surfaces beneath them, not around them, and put everything back in an organized way.</p></div></li>
+        <li><span class="icon-badge">{{ icon("clock") }}</span><div><h3>Reliable &amp; punctual</h3><p>We arrive on time and deliver consistently high-quality results, visit after visit.</p></div></li>
+        <li><span class="icon-badge">{{ icon("calendar") }}</span><div><h3>Flexible scheduling</h3><p>Weekly, bi-weekly, monthly or one-time. Need to reschedule? Just call or text.</p></div></li>
+        <li><span class="icon-badge">{{ icon("shield") }}</span><div><h3>Insured &amp; bonded</h3><p>Your home or business is protected while our team is working.</p></div></li>
+      </ul>
+    </div>
+    {%- set spotlight = reviews.testimonials[0] %}
+    <figure class="testimonial testimonial--feature">
+      {{ stars(spotlight.rating ~ " out of 5 stars") }}
+      <blockquote><p>{{ spotlight.text }}</p></blockquote>
+      <figcaption>{{ spotlight.author }}, {{ reviews.platform }} review</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">How it works</p>
+      <h2>A spotless space in three easy steps</h2>
+    </div>
+    <ol class="steps" role="list">
+      <li class="step"><h3>Reach out</h3><p>Call or text {{ site.phone.display }}, or email us. Tell us about your home or business and what you need.</p></li>
+      <li class="step"><h3>Get a free quote</h3><p>We’ll talk through your space and schedule and give you an honest, no-obligation quote with no hidden fees.</p></li>
+      <li class="step"><h3>Enjoy the results</h3><p>We clean on the schedule that suits you (weekly, bi-weekly, monthly or one-time) with care in every detail.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--blush">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Client reviews</p>
+      <h2>Trusted by Hartford County families and businesses</h2>
+      <p class="lead">Rated {{ reviews.ratingValue }} out of 5 across {{ reviews.reviewCount }} {{ reviews.platform }} reviews.</p>
+    </div>
+    <div class="testimonial-grid">
+      {%- for t in reviews.testimonials %}
+      <figure class="testimonial">
+        {{ stars(t.rating ~ " out of 5 stars") }}
+        <blockquote><p>{{ t.text }}</p></blockquote>
+        <figcaption>{{ t.author }}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+    <p class="section-foot"><a class="btn btn-outline" href="/reviews/">Read all reviews</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Service area</p>
+      <h2>Proudly serving Hartford County</h2>
+      <p class="lead">House cleaning, maid service and commercial cleaning in these towns and the surrounding communities.</p>
+      <p class="section-foot"><a class="btn btn-outline" href="/service-area/">See our service area</a></p>
+    </div>
+    <ul class="town-chips" role="list">
+      {%- for t in towns %}
+      <li><a href="/service-area/#{{ t.slug }}">{{ icon("map-pin") }}{{ t.name }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--linen">
+  <div class="container split split--top">
+    <div>
+      <p class="eyebrow">Questions</p>
+      <h2>Good to know</h2>
+      <p class="lead">Quick answers to what clients ask us most.</p>
+      <p class="section-foot"><a class="btn btn-outline" href="/faq/">All FAQs</a></p>
+    </div>
+    <div class="faq-list">
+      {%- for f in faqs | selectattr("featured") %}
+      <details class="faq-item"><summary>{{ f.q }}</summary><div class="faq-answer"><p>{{ f.a }}</p></div></details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

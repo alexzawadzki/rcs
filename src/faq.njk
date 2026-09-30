@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+title: "Cleaning Service FAQ | Renata's Cleaning Service"
+description: "Answers about supplies, insurance, scheduling, service areas and what our house and office cleaning includes. Free quotes: (860) 796-5222."
+faqSchema: true
+breadcrumbs:
+  - label: FAQ
+    url: /faq/
+---
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Good questions</p>
+    <h1>Frequently Asked Questions</h1>
+    <p class="lead">How we work, what’s included and how to book. Don’t see your question? Call or text {{ site.phone.display }}.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="faq-list">
+      {%- for f in faqs %}
+      <details class="faq-item" id="{{ f.id }}"><summary>{{ f.q }}</summary><div class="faq-answer"><p>{{ f.a }}</p></div></details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

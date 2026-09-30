@@ -1,0 +1,1 @@
+fixture for assetUrl hashing

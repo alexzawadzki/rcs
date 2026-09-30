@@ -1,0 +1,6 @@
+{% from "partials/macros.njk" import icon %}
+<nav class="mobile-bar" aria-label="Quick contact">
+  <a href="tel:{{ site.phone.tel }}">{{ icon("phone") }}<span>Call</span></a>
+  <a href="sms:{{ site.phone.sms }}">{{ icon("message") }}<span>Text</span></a>
+  <a href="mailto:{{ site.email }}">{{ icon("mail") }}<span>Email</span></a>
+</nav>

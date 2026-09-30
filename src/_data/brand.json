@@ -1,0 +1,12 @@
+{
+  "colors": [
+    { "token": "crimson", "name": "Renata Crimson", "hex": "#C41E3A", "rgb": "196, 30, 58", "cmyk": "0, 85, 70, 23", "role": "Primary brand color, calls to action, logo petals" },
+    { "token": "garnet", "name": "Garnet", "hex": "#8B1A2F", "rgb": "139, 26, 47", "cmyk": "0, 81, 66, 45", "role": "Hover states, dark sections, footer, logo diagonal petals" },
+    { "token": "blush", "name": "Blush", "hex": "#F7E6E4", "rgb": "247, 230, 228", "cmyk": "0, 7, 8, 3", "role": "Tinted cards and highlights" },
+    { "token": "magnolia", "name": "Magnolia", "hex": "#FFFEF9", "rgb": "255, 254, 249", "cmyk": "0, 0, 2, 0", "role": "Page background, reversed logo" },
+    { "token": "linen", "name": "Linen", "hex": "#F8F5F0", "rgb": "248, 245, 240", "cmyk": "0, 1, 3, 3", "role": "Alternate section background" },
+    { "token": "ink", "name": "Ink", "hex": "#2B2527", "rgb": "43, 37, 39", "cmyk": "0, 14, 9, 83", "role": "Body text and headings" },
+    { "token": "stone", "name": "Stone", "hex": "#6B6360", "rgb": "107, 99, 96", "cmyk": "0, 7, 10, 58", "role": "Secondary text" },
+    { "token": "pollen", "name": "Pollen Gold", "hex": "#E3A935", "rgb": "227, 169, 53", "cmyk": "0, 26, 77, 11", "role": "Flower center, stars, accents (graphics and large text only)" }
+  ]
+}

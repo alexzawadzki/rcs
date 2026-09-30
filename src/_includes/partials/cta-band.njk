@@ -1,0 +1,16 @@
+{% from "partials/macros.njk" import icon %}
+{% from "partials/logo-mark.njk" import logoMark %}
+<section class="cta-band" aria-labelledby="cta-title">
+  {{ logoMark("logo-mark--reversed") }}
+  <div class="container cta-band-inner">
+    <div>
+      <h2 id="cta-title">Ready for a spotless home or office?</h2>
+      <p>Free, no-obligation quotes. Call or text anytime, or email us and we’ll reply within 24 hours.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-light" href="tel:{{ site.phone.tel }}">{{ icon("phone") }}{{ site.phone.display }}</a>
+      <a class="btn btn-ghost-light" href="sms:{{ site.phone.sms }}">{{ icon("message") }}Text us</a>
+      <a class="btn btn-ghost-light" href="mailto:{{ site.email }}">{{ icon("mail") }}Email</a>
+    </div>
+  </div>
+</section>

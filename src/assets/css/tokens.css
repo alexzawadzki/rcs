@@ -1,0 +1,48 @@
+/* Design tokens. Brand colors mirror src/_data/brand.json (enforced by tests/design-tokens.test.mjs). */
+:root {
+  --crimson: #C41E3A;
+  --garnet: #8B1A2F;
+  --blush: #F7E6E4;
+  --magnolia: #FFFEF9;
+  --linen: #F8F5F0;
+  --ink: #2B2527;
+  --stone: #6B6360;
+  --pollen: #E3A935;
+  --white: #FFFFFF;
+
+  --line: rgb(43 37 39 / 0.12);
+  --line-strong: rgb(43 37 39 / 0.22);
+  --on-dark: rgb(255 254 249 / 0.86);
+  --on-dark-line: rgb(255 254 249 / 0.26);
+
+  --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+
+  --step--1: clamp(0.875rem, 0.85rem + 0.12vw, 0.94rem);
+  --step-0: clamp(1.0625rem, 1.02rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.45vw, 1.4rem);
+  --step-2: clamp(1.55rem, 1.35rem + 0.9vw, 2.1rem);
+  --step-3: clamp(2rem, 1.6rem + 1.8vw, 3rem);
+  --step-4: clamp(2.5rem, 1.75rem + 3.4vw, 4.6rem);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: clamp(2.25rem, 1.8rem + 2vw, 3.25rem);
+  --space-3xl: clamp(3.5rem, 2.5rem + 4.5vw, 6.5rem);
+
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 24px;
+  --radius-pill: 999px;
+
+  --shadow-s: 0 1px 2px rgb(43 37 39 / 0.06), 0 2px 8px rgb(43 37 39 / 0.05);
+  --shadow-m: 0 2px 6px rgb(43 37 39 / 0.05), 0 16px 40px rgb(139 26 47 / 0.1);
+
+  --container: 1200px;
+  --header-h: 76px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}

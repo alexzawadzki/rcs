@@ -1,0 +1,18 @@
+{% macro icon(name, extraClass="") -%}
+<svg class="icon{% if extraClass %} {{ extraClass }}{% endif %}" aria-hidden="true" focusable="false"><use href="{{ '/assets/icons/sprite.svg' | assetUrl }}#i-{{ name }}"></use></svg>
+{%- endmacro %}
+
+{% macro stars(label) -%}
+<span class="stars" role="img" aria-label="{{ label }}">
+{%- for i in range(0, 5) %}<svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="{{ '/assets/icons/sprite.svg' | assetUrl }}#i-star"></use></svg>{% endfor -%}
+</span>
+{%- endmacro %}
+
+{% macro serviceCard(service) -%}
+<article class="service-card">
+  <span class="icon-badge">{{ icon(service.icon) }}</span>
+  <h3><a href="/services/{{ service.slug }}/">{{ service.name }}</a></h3>
+  <p>{{ service.summary }}</p>
+  <span class="card-link" aria-hidden="true">Learn more {{ icon("arrow-right") }}</span>
+</article>
+{%- endmacro %}

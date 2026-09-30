@@ -1,0 +1,32 @@
+{% from "partials/macros.njk" import icon %}
+{% from "partials/logo-mark.njk" import logoMark %}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      {{ logoMark() }}
+      <span class="brand-text"><span class="brand-name">Renata’s</span><span class="brand-sub">Cleaning Service</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span><span class="visually-hidden">Menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul class="nav-list" role="list">
+        {%- for item in nav %}
+        <li class="nav-item{% if item.hasSub %} has-sub{% endif %}">
+          <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          {%- if item.hasSub %}
+          <ul class="nav-sub" role="list">
+            {%- for s in services %}
+            {%- set serviceUrl = "/services/" ~ s.slug ~ "/" %}
+            <li><a href="{{ serviceUrl }}"{% if page.url == serviceUrl %} aria-current="page"{% endif %}>{{ s.name }}</a></li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+      <a class="btn btn-primary nav-call" href="tel:{{ site.phone.tel }}">{{ icon("phone") }}<span class="nav-call-label">{{ site.phone.display }}</span></a>
+    </nav>
+  </div>
+  <div class="nav-backdrop" hidden></div>
+</header>

@@ -4,55 +4,47 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static single-page website for **Renata's Cleaning Service** — a commercial and residential cleaning company in Hartford County, CT. Live at `renatascleaning.com`.
+Multi-page static website for **Renata's Cleaning Service**, a family-owned residential and commercial cleaning company in Hartford County, CT. Live at `renatascleaning.com`, hosted on Cloudflare Pages.
 
-## Development
-
-No build tools or dependencies. Open `index.html` directly or serve locally:
+## Commands
 
 ```bash
-python -m http.server 8000
-# or
-npx serve
+npm install          # once
+npm run serve        # dev server with live reload at http://localhost:8080
+npm run build        # build to _site/
+npm test             # all tests against _site/ (build first)
+npm run check        # build + test — exactly what Cloudflare runs
+npm run brand        # regenerate logo, icons and og-image (needs: brew install librsvg)
+npm run brand:fonts  # re-download the fonts used to outline logo text
 ```
 
-Deployment is automatic: every push to `main` triggers the GitHub Actions workflow (`.github/workflows/static.yml`), which deploys to GitHub Pages with the custom domain `renatascleaning.com`.
+Single test file: `node --test tests/services.test.mjs`
+
+## Deployment
+
+Cloudflare Pages builds every push: build command `npm run build && npm test`, output `_site`, Node from `.nvmrc`. A failing test blocks the deploy. Non-`main` branches get preview URLs (auto-noindexed).
 
 ## Architecture
 
-Everything lives in a single file: **`index.html`** (~1650 lines). It contains:
+- Eleventy 3 + Nunjucks. Source in `src/`, output in `_site/` (gitignored).
+- `src/_data/*.json` is the single source of truth: `site` (name, phone, email, Ads ID), `services` (8 service pages), `serviceGroups`, `towns`, `faqs`, `reviews`, `brand` (colors), `nav`.
+- `src/_lib/filters.js` and `src/_lib/schema.js` are pure, unit-tested modules registered in `eleventy.config.js`.
+- `src/_includes/layouts/base.njk` renders every `<head>` (SEO meta, Google Ads tag `AW-17838655328`, one JSON-LD `@graph`), header, CTA band, footer and mobile call bar. Pages set `title`, `description`, `breadcrumbs`, and optionally `noindex`, `hideCta`, `faqSchema`.
+- Service pages come from `services.json` via pagination (`src/services/service.njk` + `layouts/service.njk`); add a service by adding an entry (tests enforce required fields and lengths).
+- CSS load order: `tokens.css` → `base.css` → `components.css` → `pages.css`. Reference CSS/JS/icons through the `assetUrl` filter (adds `?v=<hash>`); never hardcode those paths.
+- Icons live in `src/assets/icons/sprite.svg` and render through the `icon(name)` macro.
 
-- **`<head>`**: Google Ads tag (`AW-17838655328`), SEO meta tags (Open Graph, Twitter Card, geo), two Schema.org JSON-LD blocks (`LocalBusiness` and `FAQPage`)
-- **`<style>`**: All CSS, organized as global variables → base styles → component styles → media queries (768px breakpoint for mobile)
-- **`<body>`**: Semantic HTML sections in order: `header/nav` → `hero` → `#about` → `#services` → `.pricing` → `#why-choose` → `#testimonials` → `#faq` → `.service-area` → `#contact` → `footer`
-- **Inline `<script>`**: Mobile hamburger menu toggle and smooth scroll behavior
+## Brand
 
-## Design System
+- Logo geometry: `scripts/brand/geometry.mjs`. `npm run brand` regenerates everything in `src/assets/brand/`, the favicons, `og-image.png` and `src/_includes/partials/logo-mark.njk`. Never hand-edit generated files.
+- Colors live in `src/_data/brand.json` and are mirrored in `tokens.css` (a test enforces the match). Pollen gold is never used for small text.
+- Fonts: Cormorant Garamond (display, wordmark) + Jost (body, UI).
+- Brand guidelines: https://claude.ai/code/artifact/d628c7f0-d24a-4b9e-b15b-f68faf2a478c
 
-CSS custom properties defined in `:root`:
+## Rules
 
-| Variable | Value | Use |
-|---|---|---|
-| `--primary-red` | `#C41E3A` | Brand color, CTAs, nav accents |
-| `--deep-red` | `#8B1A2F` | Hover states |
-| `--soft-red` | `#E85D75` | Subtle accents |
-| `--magnolia-white` | `#FFFEF9` | Header and page background |
-| `--cream` | `#F8F5F0` | Section backgrounds |
-| `--charcoal` | `#2C2C2C` | Body text |
-
-Fonts: **Cormorant Garamond** (headings/logo) + **Montserrat** (body), loaded from Google Fonts.
-
-## SVG Logo
-
-The flower logo appears in three places with **separate SVG gradient IDs** to avoid conflicts:
-- Header (`id="petal"`, `id="center"`) — 50×50px display
-- Hero section (`id="hero-petal"`, `id="hero-center"`) — 120×120px display
-- Footer (`id="footer-petal"`, `id="footer-center"`) — 60×60px display
-
-When editing any logo SVG, keep the gradient IDs scoped to their section or all three will render identically.
-
-## SEO Notes
-
-The Schema.org `LocalBusiness` block (lines ~52–119) and `FAQPage` block (lines ~120–175) are critical for Google rich results. The `FAQPage` schema must stay in sync with the visible FAQ accordion content in `#faq`.
-
-No pricing is shown anywhere on the site — all services are quote-based by design.
+- No pricing anywhere; tests fail on `$` followed by a digit.
+- Copy only states facts the owner has confirmed (spec §2: `docs/superpowers/specs/2026-09-29-site-redesign-design.md`).
+- Titles ≤ 60 chars, descriptions 120–160 chars, exactly one `<h1>` per page, internal links end in `/`.
+- The FAQPage schema is generated from `faqs.json`, so the visible FAQ and schema cannot drift.
+- `src/404.njk` must keep producing `/404.html`; without it Cloudflare Pages serves the home page for every unknown URL.

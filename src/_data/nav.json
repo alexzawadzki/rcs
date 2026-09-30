@@ -1,0 +1,9 @@
+[
+  { "label": "Services", "url": "/services/", "hasSub": true },
+  { "label": "Commercial", "url": "/services/commercial-cleaning/" },
+  { "label": "Service Area", "url": "/service-area/" },
+  { "label": "About", "url": "/about/" },
+  { "label": "Reviews", "url": "/reviews/" },
+  { "label": "FAQ", "url": "/faq/" },
+  { "label": "Contact", "url": "/contact/" }
+]

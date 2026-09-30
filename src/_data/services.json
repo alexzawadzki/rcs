@@ -1,0 +1,269 @@
+[
+  {
+    "slug": "house-cleaning",
+    "name": "House Cleaning",
+    "icon": "home",
+    "category": "residential",
+    "featured": true,
+    "metaTitle": "House Cleaning in Hartford County, CT | Renata's",
+    "metaDescription": "House cleaning & maid service in Hartford County, CT: weekly, bi-weekly or monthly. 25+ years, insured & bonded. Free quote: (860) 796-5222.",
+    "h1": "House Cleaning & Maid Service in Hartford County, CT",
+    "summary": "Recurring or one-time home cleaning: dusting, vacuuming, mopping, kitchens and bathrooms, done with real attention to detail.",
+    "intro": [
+      "For more than 25 years, Renata's Cleaning Service has kept homes across Hartford County clean, calm and cared for. Our house cleaning is thorough by habit: we move objects to dust the surfaces underneath them, not around them, and put everything back where it belongs.",
+      "Choose weekly, bi-weekly or monthly maid service, or book a one-time clean. Most of our residential clients prefer bi-weekly visits, and we're happy to build a schedule around your household."
+    ],
+    "included": [
+      "Vacuuming all floors and carpets",
+      "Mopping hard floors",
+      "Dusting all surfaces, with objects moved rather than dusted around",
+      "Full bathroom cleaning",
+      "Kitchen surfaces and appliances wiped down",
+      "General tidying, with items put back in an organized way"
+    ],
+    "idealFor": [
+      "Busy households that want a consistently clean home",
+      "Families who want a trusted, familiar team",
+      "Homeowners and renters across Hartford County"
+    ],
+    "scheduling": "Weekly, bi-weekly, monthly or one-time. Need to reschedule? Call or text and we'll find a new time.",
+    "faqs": [
+      { "q": "Do I need to provide cleaning supplies?", "a": "No. We bring our own professional-grade supplies and equipment. If you'd like us to use specific products in your home, just let us know." },
+      { "q": "Can I customize what gets cleaned?", "a": "Yes. We can tailor the scope to your preferences, and our deep cleaning service is available when your home needs a more intensive clean." },
+      { "q": "How often should I schedule house cleaning?", "a": "It depends on your household. We offer weekly, bi-weekly, monthly and one-time cleaning; most residential clients choose bi-weekly." }
+    ],
+    "related": ["deep-cleaning", "condo-apartment-cleaning", "move-in-move-out-cleaning", "window-cleaning"]
+  },
+  {
+    "slug": "commercial-cleaning",
+    "name": "Commercial Cleaning",
+    "icon": "building",
+    "category": "commercial",
+    "featured": true,
+    "metaTitle": "Commercial Cleaning in Hartford County, CT | Renata's",
+    "metaDescription": "Office & commercial cleaning in Hartford County, CT for offices, medical offices and retail. Insured & bonded. Free estimate: (860) 796-5222.",
+    "h1": "Commercial & Office Cleaning in Hartford County, CT",
+    "summary": "Reliable office and business cleaning on a weekly, bi-weekly or monthly schedule for offices, medical offices, retail spaces and more.",
+    "intro": [
+      "A clean workplace tells clients and employees that details matter. Renata's Cleaning Service provides commercial cleaning for offices, medical offices, retail spaces and other commercial properties throughout Hartford County, with the same meticulous standard that has built our reputation over 25+ years.",
+      "We work around your business with weekly, bi-weekly or monthly office cleaning schedules, and we're fully insured and bonded for your peace of mind."
+    ],
+    "included": [
+      "Dusting desks, shelves and surfaces",
+      "Vacuuming carpets and mopping hard floors",
+      "Restroom cleaning",
+      "Break rooms and kitchenettes wiped down",
+      "Reception and common areas kept presentable",
+      "Window and carpet cleaning available as additional services"
+    ],
+    "idealFor": [
+      "Professional and corporate offices",
+      "Medical offices",
+      "Retail stores and showrooms",
+      "Other commercial properties in Hartford County"
+    ],
+    "scheduling": "Weekly, bi-weekly or monthly schedules tailored to your business.",
+    "faqs": [
+      { "q": "What types of businesses do you clean?", "a": "We clean offices, medical offices, retail spaces and other commercial properties throughout Hartford County, CT." },
+      { "q": "Are you insured and bonded for commercial work?", "a": "Yes. Renata's Cleaning Service is fully insured and bonded, so your business is protected while our team is working." },
+      { "q": "How do I get a commercial cleaning estimate?", "a": "Call or text (860) 796-5222 or email Renata@renatascleaning.com. We'll discuss your space and schedule and provide a free, no-obligation estimate." }
+    ],
+    "related": ["window-cleaning", "carpet-cleaning", "post-construction-cleaning", "deep-cleaning"]
+  },
+  {
+    "slug": "deep-cleaning",
+    "name": "Deep Cleaning",
+    "icon": "sparkle",
+    "category": "residential",
+    "metaTitle": "Deep Cleaning in Hartford County, CT | Renata's",
+    "metaDescription": "Deep cleaning for homes and offices in Hartford County, CT that reaches every corner. 25+ years, insured & bonded. Free quote: (860) 796-5222.",
+    "h1": "Deep Cleaning Services in Hartford County, CT",
+    "summary": "A top-to-bottom clean that reaches the corners regular cleaning doesn't, ideal for seasonal resets and fresh starts.",
+    "intro": [
+      "Deep cleaning is our most comprehensive service: a detailed clean that reaches every corner of your home or office. It's the right choice for seasonal cleaning, before or after a move, or whenever your space needs that extra touch of perfection.",
+      "Many clients start with a deep clean and then keep things fresh with recurring house cleaning."
+    ],
+    "included": [
+      "Everything in our standard house cleaning",
+      "Detailed dusting of hard-to-reach surfaces",
+      "Extra attention to corners, edges and buildup",
+      "Kitchen and bathroom detail work",
+      "Focus on the areas that matter most to you"
+    ],
+    "idealFor": [
+      "Seasonal and spring cleaning",
+      "Getting ready for guests or the holidays",
+      "A first clean before starting recurring service",
+      "Homes and offices that need a reset"
+    ],
+    "scheduling": "Booked as a one-time service, or as the first visit before a recurring schedule.",
+    "faqs": [
+      { "q": "What's the difference between deep cleaning and regular house cleaning?", "a": "Regular house cleaning maintains your home on a schedule. Deep cleaning is more intensive and detailed, reaching corners and areas that routine visits don't cover every time." },
+      { "q": "Do you offer deep cleaning for offices?", "a": "Yes. Deep cleaning is available for both homes and commercial spaces in Hartford County." }
+    ],
+    "related": ["house-cleaning", "move-in-move-out-cleaning", "post-construction-cleaning", "carpet-cleaning"]
+  },
+  {
+    "slug": "move-in-move-out-cleaning",
+    "name": "Move-In / Move-Out Cleaning",
+    "icon": "box",
+    "category": "residential",
+    "metaTitle": "Move-In/Move-Out Cleaning in Hartford County, CT | Renata's",
+    "metaDescription": "Move-in & move-out cleaning in Hartford County, CT. Every surface cleaned and ready for the next chapter. Free quote: (860) 796-5222.",
+    "h1": "Move-In & Move-Out Cleaning in Hartford County, CT",
+    "summary": "Leave your old place spotless or start fresh in your new one, with every surface cleaned and ready.",
+    "intro": [
+      "Moving is stressful enough. Whether you're handing over the keys or unpacking in a new home, our move-in and move-out cleaning makes sure every surface is thoroughly cleaned and ready for the next chapter.",
+      "Empty rooms are the best time for a truly thorough clean, and our team treats every space as if it were our own."
+    ],
+    "included": [
+      "Dusting and wiping surfaces throughout empty rooms",
+      "Kitchen cleaning, including surfaces and appliances",
+      "Full bathroom cleaning",
+      "Vacuuming and mopping all floors",
+      "Closets, shelves and cabinets wiped out",
+      "Window and carpet cleaning available as additional services"
+    ],
+    "idealFor": [
+      "Homeowners selling or buying",
+      "Renters moving out of an apartment or condo",
+      "Landlords and property managers between tenants",
+      "Anyone who wants a fresh start in a new home"
+    ],
+    "scheduling": "One-time service, scheduled around your moving date.",
+    "faqs": [
+      { "q": "Do you clean apartments and condos for move-outs?", "a": "Yes. We provide move-in and move-out cleaning for houses, condos and apartments throughout Hartford County." },
+      { "q": "When should I schedule a move-out clean?", "a": "Ideally after your belongings are moved out, when every surface is accessible. Call or text us with your moving date and we'll find a time that works." }
+    ],
+    "related": ["deep-cleaning", "condo-apartment-cleaning", "carpet-cleaning", "window-cleaning"]
+  },
+  {
+    "slug": "condo-apartment-cleaning",
+    "name": "Condo & Apartment Cleaning",
+    "icon": "apartment",
+    "category": "residential",
+    "metaTitle": "Condo & Apartment Cleaning in Hartford County, CT | Renata's",
+    "metaDescription": "Condo & apartment cleaning in Hartford County, CT with flexible monthly or custom schedules. Insured & bonded. Free quote: (860) 796-5222.",
+    "h1": "Condo & Apartment Cleaning in Hartford County, CT",
+    "summary": "Specialized cleaning for condos and apartments, with flexible monthly or custom schedules.",
+    "intro": [
+      "Condos and apartments deserve the same meticulous care as any home. We provide specialized cleaning for condos and apartments across Hartford County with flexible monthly or custom schedules.",
+      "After a thorough cleaning, our team puts things back in an organized way, so your space feels calm, not just clean."
+    ],
+    "included": [
+      "Vacuuming and mopping",
+      "Dusting, with objects moved rather than dusted around",
+      "Kitchen surfaces and appliances wiped down",
+      "Full bathroom cleaning",
+      "Tidying and organizing as we go"
+    ],
+    "idealFor": [
+      "Busy professionals",
+      "Condo owners and renters",
+      "Anyone who wants a clean home without giving up their weekends"
+    ],
+    "scheduling": "Monthly, bi-weekly, weekly or a custom schedule.",
+    "faqs": [
+      { "q": "Can I set a custom cleaning schedule?", "a": "Yes. We offer flexible monthly or custom schedules for condos and apartments, and you can call or text to reschedule when life happens." },
+      { "q": "Do you bring your own supplies?", "a": "Yes. We bring professional-grade supplies and equipment, and we're happy to use your preferred products on request." }
+    ],
+    "related": ["house-cleaning", "move-in-move-out-cleaning", "deep-cleaning", "window-cleaning"]
+  },
+  {
+    "slug": "window-cleaning",
+    "name": "Window Cleaning",
+    "icon": "window",
+    "category": "specialty",
+    "metaTitle": "Window Cleaning in Hartford County, CT | Renata's",
+    "metaDescription": "Window cleaning inside and out for homes and businesses in Hartford County, CT. 25+ years, insured & bonded. Free quote: (860) 796-5222.",
+    "h1": "Window Cleaning in Hartford County, CT",
+    "summary": "Crystal-clear windows inside and out for homes and businesses.",
+    "intro": [
+      "Let the natural light shine through. Our professional window cleaning leaves windows crystal-clear inside and out for residential and commercial properties across Hartford County.",
+      "Window cleaning pairs naturally with a deep clean, a move-in or move-out clean, or regular commercial cleaning."
+    ],
+    "included": [
+      "Interior window cleaning",
+      "Exterior window cleaning",
+      "Sills and frames wiped down",
+      "Residential and commercial properties"
+    ],
+    "idealFor": [
+      "Homes that want more natural light",
+      "Storefronts and offices that want a great first impression",
+      "Seasonal cleaning",
+      "Move-in and move-out cleans"
+    ],
+    "scheduling": null,
+    "faqs": [
+      { "q": "Do you clean windows inside and out?", "a": "Yes. We offer interior and exterior window cleaning for residential and commercial properties." },
+      { "q": "Can window cleaning be added to another service?", "a": "Yes. Window cleaning pairs well with deep cleaning, move-in/move-out cleaning and commercial cleaning. Just mention it when you request your free quote." }
+    ],
+    "related": ["deep-cleaning", "commercial-cleaning", "house-cleaning", "move-in-move-out-cleaning"]
+  },
+  {
+    "slug": "carpet-cleaning",
+    "name": "Carpet Cleaning",
+    "icon": "carpet",
+    "category": "specialty",
+    "metaTitle": "Carpet Cleaning in Hartford County, CT | Renata's",
+    "metaDescription": "Carpet cleaning in Hartford County, CT that lifts deep-set dirt, stains and allergens. Insured & bonded. Free quote: (860) 796-5222.",
+    "h1": "Carpet Cleaning in Hartford County, CT",
+    "summary": "Refresh your carpets by removing deep-set dirt, stains and allergens.",
+    "intro": [
+      "Carpets hold on to more than you can see. Our carpet cleaning removes deep-set dirt, stains and allergens to refresh and revitalize your floors and restore them to their best.",
+      "We clean carpets in homes and commercial spaces throughout Hartford County."
+    ],
+    "included": [
+      "Removal of deep-set dirt",
+      "Stain treatment",
+      "Allergen reduction",
+      "Residential and commercial carpets"
+    ],
+    "idealFor": [
+      "High-traffic rooms and hallways",
+      "Homes with kids or pets",
+      "Offices with carpeted floors",
+      "Move-in and move-out cleans"
+    ],
+    "scheduling": null,
+    "faqs": [
+      { "q": "Can carpet cleaning remove stains?", "a": "Our carpet cleaning targets deep-set dirt, stains and allergens. Results depend on the type and age of the stain, so ask us about yours when you request a quote." },
+      { "q": "Do you clean carpets in offices?", "a": "Yes. Carpet cleaning is available for both homes and commercial spaces in Hartford County." }
+    ],
+    "related": ["deep-cleaning", "house-cleaning", "commercial-cleaning", "move-in-move-out-cleaning"]
+  },
+  {
+    "slug": "post-construction-cleaning",
+    "name": "Post-Construction Cleaning",
+    "icon": "hammer",
+    "category": "specialty",
+    "metaTitle": "Post-Construction Cleaning in Hartford County, CT | Renata's",
+    "metaDescription": "Post-construction cleaning in Hartford County, CT. We clear the dust and mess after your renovation. Insured & bonded. Call (860) 796-5222.",
+    "h1": "Post-Construction Cleaning in Hartford County, CT",
+    "summary": "Heavy-duty cleanup after renovation or construction, so you can enjoy your new space.",
+    "intro": [
+      "Renovation complete? We handle the heavy-duty cleanup so you can enjoy your newly transformed space without the dust, debris and construction mess.",
+      "Construction dust settles everywhere, which is exactly where our attention to detail pays off."
+    ],
+    "included": [
+      "Construction dust removed from surfaces",
+      "Leftover light debris cleared",
+      "Fixtures, cabinets and trim wiped down",
+      "Kitchens and bathrooms cleaned after remodels",
+      "Vacuuming and mopping all floors"
+    ],
+    "idealFor": [
+      "Kitchen and bathroom remodels",
+      "Home additions and renovations",
+      "Commercial build-outs",
+      "Contractors handing over a finished project"
+    ],
+    "scheduling": null,
+    "faqs": [
+      { "q": "When should post-construction cleaning be scheduled?", "a": "After the construction work is finished. Call or text us with your project timeline and we'll plan the cleanup around it." },
+      { "q": "Do you clean after commercial renovations?", "a": "Yes. Post-construction cleaning is available for residential and commercial properties in Hartford County." }
+    ],
+    "related": ["deep-cleaning", "window-cleaning", "carpet-cleaning", "commercial-cleaning"]
+  }
+]

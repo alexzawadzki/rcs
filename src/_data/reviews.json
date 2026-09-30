@@ -1,0 +1,10 @@
+{
+  "ratingValue": "4.6",
+  "reviewCount": 11,
+  "platform": "Google",
+  "testimonials": [
+    { "author": "Donald McMenemy", "rating": 5, "text": "Renata and her team are the best! They move objects to dust surfaces, they're not dusting around them! They put things back in an organized way. I really appreciate their attention to detail and complete cleaning. They arrive on time and are responsive to my requests." },
+    { "author": "Karin Hunt", "rating": 5, "text": "I have been using Renata's Cleaning Service for about 10 years. Both she and her girls do an incredible job for me and I wouldn't use anyone else." },
+    { "author": "Mark DeBisschop", "rating": 5, "text": "We are very satisfied with Renata's cleaning. Her work is consistently good. She has been with us for several years and is very reliable and flexible to work around scheduling changes. I highly recommend her service." }
+  ]
+}

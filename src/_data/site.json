@@ -1,0 +1,18 @@
+{
+  "name": "Renata's Cleaning Service",
+  "shortName": "Renata's",
+  "url": "https://renatascleaning.com",
+  "tagline": "Pure Elegance in Every Detail",
+  "phone": { "display": "(860) 796-5222", "tel": "+18607965222", "sms": "+18607965222" },
+  "email": "Renata@renatascleaning.com",
+  "googleAdsId": "AW-17838655328",
+  "reviewUrl": "https://g.page/r/CS_Y3WFavzo8EAE/review",
+  "locality": "Hartford",
+  "region": "CT",
+  "regionName": "Connecticut",
+  "county": "Hartford County",
+  "geo": { "latitude": 41.7637, "longitude": -72.6851 },
+  "themeColor": "#C41E3A",
+  "ogImage": "/og-image.png",
+  "logo": "/assets/brand/renatas-mark-color-512.png"
+}

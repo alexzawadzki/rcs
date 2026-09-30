@@ -1,0 +1,5 @@
+[
+  { "key": "residential", "label": "For your home", "intro": "Recurring maid service, deep cleans and move-outs for houses, condos and apartments." },
+  { "key": "commercial", "label": "For your business", "intro": "Office and commercial cleaning on a schedule that works around your business." },
+  { "key": "specialty", "label": "Specialty cleaning", "intro": "Windows, carpets and post-construction cleanup for homes and businesses." }
+]

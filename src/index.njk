@@ -62,7 +62,7 @@ description: "House cleaning, office cleaning & deep cleaning in Hartford County
       </article>
       {%- endfor %}
     </div>
-    <div class="card-grid">
+    <div class="card-grid card-grid--three">
       {%- for s in services | rejectattr("featured") %}{{ serviceCard(s) }}{% endfor %}
     </div>
   </div>

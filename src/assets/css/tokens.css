@@ -23,9 +23,10 @@
 
 /* Design tokens. Brand colors mirror src/_data/brand.json (enforced by tests/design-tokens.test.mjs). */
 :root {
-  --crimson: #C41E3A;
-  --garnet: #8B1A2F;
-  --blush: #F7E6E4;
+  --periwinkle: #9A9AEB;
+  --iris: #5454C4;
+  --indigo: #2E2E7A;
+  --mist: #EEEEFB;
   --magnolia: #FFFEF9;
   --linen: #F8F5F0;
   --ink: #2B2527;
@@ -63,7 +64,7 @@
   --radius-pill: 999px;
 
   --shadow-s: 0 1px 2px rgb(43 37 39 / 0.06), 0 2px 8px rgb(43 37 39 / 0.05);
-  --shadow-m: 0 2px 6px rgb(43 37 39 / 0.05), 0 16px 40px rgb(139 26 47 / 0.1);
+  --shadow-m: 0 2px 6px rgb(43 37 39 / 0.05), 0 16px 40px rgb(46 46 122 / 0.1);
 
   --container: 1200px;
   --header-h: 76px;

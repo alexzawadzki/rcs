@@ -21,7 +21,7 @@ describe("critical rendering path", () => {
       assert.ok(!page.html.includes("fonts.gstatic.com"), "no Google Fonts file request");
       const stylesheets = findTags(page.html, "link").filter((a) => a.rel === "stylesheet");
       assert.equal(stylesheets.length, 0, "no render-blocking stylesheet requests");
-      assert.match(page.html, /<style>[\s\S]*--crimson: #C41E3A;[\s\S]*<\/style>/, "tokens inlined");
+      assert.match(page.html, /<style>[\s\S]*--periwinkle: #9A9AEB;[\s\S]*<\/style>/, "tokens inlined");
       const preloads = findTags(page.html, "link").filter((a) => a.rel === "preload" && a.as === "font");
       assert.deepEqual(preloads.map((a) => a.href).sort(), [...PRELOADED].sort());
       preloads.forEach((a) => assert.ok("crossorigin" in a, "font preloads need crossorigin"));

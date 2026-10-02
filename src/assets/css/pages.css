@@ -4,22 +4,22 @@
 .hero {
   position: relative; overflow: hidden;
   padding-block: clamp(2.5rem, 1.5rem + 5vw, 6rem) clamp(3rem, 2rem + 4vw, 5.5rem);
-  background: radial-gradient(60rem 36rem at 88% 8%, var(--blush), transparent 62%), var(--magnolia);
+  background: radial-gradient(60rem 36rem at 88% 8%, var(--mist), transparent 62%), var(--magnolia);
 }
 .hero-grid { display: grid; gap: var(--space-2xl); align-items: center; }
 @media (min-width: 960px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
 .hero h1 { max-width: 15ch; }
-.hero h1 .hero-accent { display: block; font-style: italic; font-weight: 500; color: var(--crimson); }
+.hero h1 .hero-accent { display: block; font-style: italic; font-weight: 500; color: var(--iris); }
 .hero .lead { max-width: 34rem; margin-block: var(--space-l) var(--space-xl); }
 .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-s) var(--space-l); margin-top: var(--space-xl); font-size: 0.92rem; color: var(--stone); }
 .hero-meta > span { display: inline-flex; align-items: center; gap: 0.4rem; }
-.hero-meta .icon { width: 1.1rem; height: 1.1rem; color: var(--crimson); }
+.hero-meta .icon { width: 1.1rem; height: 1.1rem; color: var(--iris); }
 
 .hero-art { position: relative; justify-self: center; width: min(100%, 440px); }
 .hero-arch {
   position: relative; display: grid; place-items: center; aspect-ratio: 4 / 5; overflow: hidden;
   border-radius: 999px 999px var(--radius-l) var(--radius-l);
-  background: radial-gradient(circle at 50% 36%, var(--crimson), var(--garnet) 72%);
+  background: radial-gradient(circle at 50% 36%, var(--periwinkle), var(--indigo) 72%);
   box-shadow: var(--shadow-m);
 }
 .hero-arch::after { content: ""; position: absolute; inset: 14px; border: 1px solid var(--on-dark-line); border-radius: inherit; }
@@ -31,7 +31,7 @@
   font-size: 0.92rem; font-weight: 500;
 }
 .hero-card li { display: flex; align-items: center; gap: 0.55rem; }
-.hero-card .icon { width: 1.15rem; height: 1.15rem; color: var(--crimson); }
+.hero-card .icon { width: 1.15rem; height: 1.15rem; color: var(--iris); }
 @media (max-width: 959px) {
   .hero-art { width: min(100%, 340px); }
   .hero-arch { aspect-ratio: 1; }
@@ -54,9 +54,9 @@
 .included-card { padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); background: var(--linen); border-radius: var(--radius-l); }
 .schedule-note {
   display: flex; gap: var(--space-m); padding: var(--space-l);
-  background: var(--blush); border-left: 3px solid var(--crimson); border-radius: 0 var(--radius-m) var(--radius-m) 0;
+  background: var(--mist); border-left: 3px solid var(--periwinkle); border-radius: 0 var(--radius-m) var(--radius-m) 0;
 }
-.schedule-note .icon { margin-top: 0.2rem; color: var(--crimson); }
+.schedule-note .icon { margin-top: 0.2rem; color: var(--iris); }
 .service-main .schedule-note h2 { margin-bottom: 0.2rem; font-size: 1.4rem; }
 .aside-card {
   position: sticky; top: calc(var(--header-h) + 1.5rem);
@@ -71,11 +71,11 @@
   background: var(--linen); border-radius: var(--radius-s);
   font-weight: 500; color: var(--ink); text-decoration: none; overflow-wrap: anywhere;
 }
-.aside-contact a:hover { background: var(--blush); color: var(--garnet); }
-.aside-contact .icon { width: 1.2rem; height: 1.2rem; color: var(--crimson); }
+.aside-contact a:hover { background: var(--mist); color: var(--indigo); }
+.aside-contact .icon { width: 1.2rem; height: 1.2rem; color: var(--iris); }
 .aside-card .checklist { font-size: 0.95rem; }
 .area-line { display: flex; gap: 0.5rem; max-width: 60rem; margin-top: var(--space-2xl); color: var(--stone); }
-.area-line .icon { width: 1.2rem; height: 1.2rem; margin-top: 0.3rem; color: var(--crimson); }
+.area-line .icon { width: 1.2rem; height: 1.2rem; margin-top: 0.3rem; color: var(--iris); }
 
 /* Contact */
 .contact-grid { display: grid; gap: var(--space-l); margin-bottom: var(--space-3xl); }
@@ -86,9 +86,9 @@
   border: 1px solid var(--line); border-radius: var(--radius-l);
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
 }
-.contact-card:hover { color: var(--ink); border-color: var(--crimson); box-shadow: var(--shadow-m); transform: translateY(-2px); }
+.contact-card:hover { color: var(--ink); border-color: var(--iris); box-shadow: var(--shadow-m); transform: translateY(-2px); }
 .contact-card h2 { font-size: 1.75rem; }
-.contact-value { font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; color: var(--crimson); overflow-wrap: anywhere; }
+.contact-value { font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; color: var(--iris); overflow-wrap: anywhere; }
 .contact-note { font-size: 0.95rem; color: var(--stone); }
 
 /* Service area */
@@ -99,9 +99,9 @@
   scroll-margin-top: calc(var(--header-h) + 1rem);
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
-.town-card:target { border-color: var(--crimson); box-shadow: 0 0 0 4px var(--blush); }
+.town-card:target { border-color: var(--iris); box-shadow: 0 0 0 4px var(--mist); }
 .town-card h2 { display: flex; align-items: center; gap: 0.5rem; font-size: 1.6rem; }
-.town-card h2 .icon { width: 1.2rem; height: 1.2rem; color: var(--crimson); }
+.town-card h2 .icon { width: 1.2rem; height: 1.2rem; color: var(--iris); }
 .town-card p { margin-top: 0.35rem; font-size: 0.98rem; color: var(--stone); }
 
 /* About */
@@ -114,7 +114,7 @@
   margin-bottom: var(--space-2xl); padding: var(--space-xl);
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-l);
 }
-.rating-score { font-family: var(--font-display); font-size: 4.5rem; font-weight: 600; line-height: 1; color: var(--crimson); }
+.rating-score { font-family: var(--font-display); font-size: 4.5rem; font-weight: 600; line-height: 1; color: var(--iris); }
 .rating-summary .stars .icon { width: 1.4rem; height: 1.4rem; }
 .rating-meta { display: grid; gap: 0.3rem; color: var(--stone); }
 .rating-summary .btn { margin-left: auto; }

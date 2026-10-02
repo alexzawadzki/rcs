@@ -74,7 +74,7 @@ test("reviews match the real Google profile", () => {
 test("brand palette is exact", () => {
   const byToken = Object.fromEntries(brand.colors.map((c) => [c.token, c.hex]));
   assert.deepEqual(byToken, {
-    crimson: "#C41E3A", garnet: "#8B1A2F", blush: "#F7E6E4", magnolia: "#FFFEF9",
+    periwinkle: "#9A9AEB", iris: "#5454C4", indigo: "#2E2E7A", mist: "#EEEEFB", magnolia: "#FFFEF9",
     linen: "#F8F5F0", ink: "#2B2527", stone: "#6B6360", pollen: "#E3A935",
   });
 });

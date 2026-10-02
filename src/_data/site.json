@@ -11,7 +11,7 @@
   "regionName": "Connecticut",
   "county": "Hartford County",
   "geo": { "latitude": 41.7637, "longitude": -72.6851 },
-  "themeColor": "#C41E3A",
+  "themeColor": "#9A9AEB",
   "ogImage": "/og-image.png",
   "logo": "/assets/brand/renatas-mark-color-512.png"
 }

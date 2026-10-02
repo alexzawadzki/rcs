@@ -18,8 +18,8 @@ const SUB = "CLEANING SERVICE";
 const FULL_NAME = "Renata’s Cleaning Service";
 
 const VERSIONS = Object.freeze({
-  color: { main: C.crimson, diag: C.garnet, center: C.pollen, name: C.crimson, sub: C.ink },
-  reversed: { main: C.magnolia, diag: C.blush, center: C.pollen, name: C.magnolia, sub: C.magnolia },
+  color: { main: C.periwinkle, diag: C.indigo, center: C.pollen, name: C.iris, sub: C.ink },
+  reversed: { main: C.magnolia, diag: C.mist, center: C.pollen, name: C.magnolia, sub: C.magnolia },
   ink: { main: C.ink, diag: C.ink, center: C.ink, name: C.ink, sub: C.ink },
   white: { main: WHITE, diag: WHITE, center: WHITE, name: WHITE, sub: WHITE },
 });
@@ -95,8 +95,8 @@ function stackedSvg(palette) {
 function appIconSvg({ size, radius, markRatio }) {
   const markSize = size * markRatio;
   const inset = (size - markSize) / 2;
-  const body = `<rect width="${size}" height="${size}" rx="${radius}" fill="${C.crimson}"/>`
-    + placedMark({ x: inset, y: inset, size: markSize, holes: false, paint: fillPaint(VERSIONS.reversed) });
+  const body = `<rect width="${size}" height="${size}" rx="${radius}" fill="${C.periwinkle}"/>`
+    + placedMark({ x: inset, y: inset, size: markSize, holes: false, paint: fillPaint({ ...VERSIONS.reversed, diag: C.indigo }) });
   return svgDoc(size, size, body, FULL_NAME);
 }
 
@@ -120,12 +120,12 @@ function ogImageSvg() {
   const line3Y = line2Y + line2.height + 22;
   const phoneY = H - PAD - phone.height;
   const body = [
-    `<rect width="${W}" height="${H}" fill="${C.garnet}"/>`,
+    `<rect width="${W}" height="${H}" fill="${C.indigo}"/>`,
     `<g opacity="0.09">${placedMark({ x: W - 440, y: (H - 620) / 2, size: 620, paint: () => `fill="${C.magnolia}"` })}</g>`,
     placedMark({ x: PAD, y: PAD, size: markSize, paint: fillPaint(VERSIONS.reversed) }),
     placedText(title, PAD, titleY, C.magnolia),
     `<rect x="${PAD}" y="${round(ruleY)}" width="96" height="3" fill="${C.pollen}"/>`,
-    placedText(line2, PAD, line2Y, C.blush),
+    placedText(line2, PAD, line2Y, C.mist),
     placedText(line3, PAD, line3Y, C.magnolia),
     placedText(phone, PAD, phoneY, C.pollen),
   ].join("");

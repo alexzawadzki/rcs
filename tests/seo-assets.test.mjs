@@ -39,7 +39,7 @@ test("robots.txt allows crawling and points at the sitemap", () => {
 
 test("web manifest parses and its icons exist", () => {
   const manifest = JSON.parse(readSiteFile("site.webmanifest"));
-  assert.equal(manifest.theme_color, "#C41E3A");
+  assert.equal(manifest.theme_color, "#9A9AEB");
   manifest.icons.forEach((icon) => assert.ok(siteFileExists(icon.src), icon.src));
 });
 

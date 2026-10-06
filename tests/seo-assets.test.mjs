@@ -59,11 +59,6 @@ test("_headers caches only content-hashed assets immutably", () => {
   assert.ok(!(rules.get("/assets/brand/*") ?? []).some((h) => h.includes("immutable")));
 });
 
-test("_headers keeps *.pages.dev out of search results", () => {
-  const rule = headerRules(readSiteFile("_headers")).get("https://:project.pages.dev/*") ?? [];
-  assert.ok(rule.includes("X-Robots-Tag: noindex"));
-});
-
 test("GitHub Pages leftovers are gone from the repo root", () => {
   ["CNAME", ".github/workflows/static.yml", "index.html", "sitemap.xml", "robots.txt"].forEach((file) => {
     assert.ok(!existsSync(file), `${file} should be deleted`);

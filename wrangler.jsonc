@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rcs",
+  // Renatas Cleaning Service Cloudflare account. It owns the renatascleaning.com zone,
+  // so a deploy to any other account cannot bind the custom domains below.
+  "account_id": "879437e71f120f1a94d874c92c863b45",
+  "compatibility_date": "2026-10-01",
+  // Production is the custom domain only: no *.workers.dev URL and no preview URLs.
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "renatascleaning.com", "custom_domain": true },
+    { "pattern": "www.renatascleaning.com", "custom_domain": true }
+  ],
+  // Static site: Eleventy output is uploaded as assets; /404.html answers unknown URLs with a 404.
+  "assets": {
+    "directory": "_site",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  // Every `wrangler deploy` (locally or in Workers Builds) rebuilds and runs the test suite first.
+  "build": { "command": "npm run check" },
+  "observability": { "enabled": true }
+}

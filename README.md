@@ -3,7 +3,7 @@
 Website for Renata's Cleaning Service, a family-owned residential and commercial cleaning company serving Hartford County, Connecticut for more than 25 years.
 
 - **Stack:** Eleventy 3 (static HTML), vanilla CSS/JS, Node's built-in test runner
-- **Hosting:** Cloudflare Pages
+- **Hosting:** Cloudflare Workers (static assets), Renatas Cleaning Service account, via Workers Builds
 - **Brand guidelines:** https://claude.ai/code/artifact/d628c7f0-d24a-4b9e-b15b-f68faf2a478c
 
 ## Local development
@@ -11,7 +11,7 @@ Website for Renata's Cleaning Service, a family-owned residential and commercial
 ```bash
 npm install
 npm run serve      # http://localhost:8080 with live reload
-npm run check      # build + all tests (what Cloudflare runs)
+npm run check      # build + all tests (what every deploy runs)
 ```
 
 ## Pages
@@ -23,7 +23,7 @@ npm run check      # build + all tests (what Cloudflare runs)
 | `/services/<slug>/` | 8 service pages generated from `src/_data/services.json` |
 | `/service-area/` | The 12 towns, each with an anchor (`/service-area/#west-hartford`) |
 | `/about/`, `/reviews/`, `/faq/`, `/contact/` | Company pages |
-| `/404.html` | Not-found page (required by Cloudflare Pages) |
+| `/404.html` | Not-found page, served with a 404 status for unknown URLs |
 
 ## Editing content
 
@@ -43,29 +43,35 @@ Run `npm run check` before pushing; the tests catch missing fields, over-long ti
 
 `src/assets/brand/` holds the logo in three lockups (mark, horizontal, stacked) and four versions (color, reversed, ink, white) as SVG, plus PNG exports. Regenerate everything with `npm run brand` (requires `brew install librsvg`). The logo text is converted to outlines, so the SVGs print correctly without the fonts installed.
 
-## Deploying on Cloudflare Pages
+## Deploying on Cloudflare
 
-### One-time setup
+The site is a static-assets Worker named `rcs` in the **Renatas Cleaning Service** Cloudflare account (the account that owns the `renatascleaning.com` zone). `wrangler.jsonc` pins the Worker name, the account id, the `_site` asset directory, the two custom domains and a pre-deploy `npm run check`, so a deploy cannot land on the wrong account or domain. `tests/deploy-config.test.mjs` enforces that file.
 
-1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git** → choose `alexzawadzki/rcs`.
-2. Production branch: `main`. Framework preset: **None**. Build command: `npm run build && npm test`. Build output directory: `_site`.
-3. Save and deploy. Every branch push gets a preview URL; `main` deploys to production.
+### Automatic deploys (Workers Builds)
 
-### Cutover from GitHub Pages
+The Worker is connected to `alexzawadzki/rcs`. Every push to `main` runs `npx wrangler deploy`, which rebuilds the site, runs the tests and uploads `_site`. Build history: Cloudflare dashboard → Renatas Cleaning Service → Workers & Pages → `rcs` → Deployments.
 
-1. Add `renatascleaning.com` as a site (zone) in Cloudflare on the Free plan. Let it import the existing DNS records, then change the nameservers at the domain registrar to the two Cloudflare gives you and wait until the zone shows **Active**. The old GitHub Pages site keeps serving during this.
-2. Open the preview deployment for the `redesign` branch and review every page.
-3. Merge `redesign` into `main`; wait for the production deploy to finish.
-4. Pages project → **Custom domains** → add `renatascleaning.com` and `www.renatascleaning.com`. If the domain's DNS is on Cloudflare the records are created for you; otherwise follow the CNAME/nameserver instructions shown. Adding the custom domain replaces the imported GitHub Pages records for the apex and `www`.
-5. Redirect `www` to the bare domain: **Rules → Redirect Rules** → when hostname equals `www.renatascleaning.com`, dynamic redirect to `concat("https://renatascleaning.com", http.request.uri.path)` with status 301.
-6. Verify:
-   - `curl -sI https://renatascleaning.com/does-not-exist/` → `HTTP/2 404`
-   - `curl -sI https://<project>.pages.dev/` → includes `x-robots-tag: noindex`
-   - `curl -sI https://www.renatascleaning.com/about/` → `301` to `https://renatascleaning.com/about/`
-   - `curl -sI http://renatascleaning.com/` → `301` to `https://…` (enable **SSL/TLS → Edge Certificates → Always Use HTTPS** if not)
-7. GitHub → repo **Settings → Pages** → unpublish / disable GitHub Pages so the site isn't served twice, and delete any leftover GitHub Pages `A`/`AAAA`/`CNAME` records in the Cloudflare DNS tab.
-8. Google Search Console → **Sitemaps** → submit `https://renatascleaning.com/sitemap.xml`; use **URL Inspection** to request indexing for the home page and the house-cleaning and commercial-cleaning pages.
-9. Google Business Profile → confirm the website field is `https://renatascleaning.com/`.
+Dashboard build settings to keep: production branch `main`, deploy command `npx wrangler deploy`, root directory `/`. The build command can stay empty because `wrangler.jsonc` runs `npm run check` itself.
+
+### Manual deploy
+
+```bash
+npx wrangler login      # once, browser OAuth as the account owner
+npx wrangler deploy     # builds, tests, uploads _site to renatascleaning.com
+```
+
+### Verify after a deploy
+
+- `curl -sI https://renatascleaning.com/` → `HTTP/2 200`
+- `curl -sI https://renatascleaning.com/does-not-exist/` → `HTTP/2 404`
+- `curl -sI https://www.renatascleaning.com/about/` → `301` to `https://renatascleaning.com/about/` once the Redirect Rule below exists
+
+### Remaining dashboard items (zone `renatascleaning.com`)
+
+1. **Rules → Redirect Rules**: when hostname equals `www.renatascleaning.com`, dynamic redirect to `concat("https://renatascleaning.com", http.request.uri.path)` with status 301.
+2. **SSL/TLS → Edge Certificates → Always Use HTTPS**: on.
+3. GitHub → repo **Settings → Pages**: disable GitHub Pages (its Jekyll build still runs and fails on every push).
+4. The stale `renatascleaning.com` zone in the personal Cloudflare account shows **Moved**; delete it once the new zone has been active for a week.
 
 ## Project structure
 
@@ -79,7 +85,7 @@ Run `npm run check` before pushing; the tests catch missing fields, over-long ti
 │   ├── assets/             CSS, JS, icon sprite, brand files
 │   ├── services/           Services hub + paginated service pages
 │   ├── *.njk               Pages
-│   ├── _headers            Cloudflare headers (security, caching, pages.dev noindex)
+│   ├── _headers            Cloudflare headers (security, caching)
 │   └── robots.txt, sitemap.njk, site.webmanifest, icons, og-image.png
 └── tests/                  Unit tests + checks against the built site
 ```
